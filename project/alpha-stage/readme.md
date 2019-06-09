@@ -1,2 +1,2 @@
 # Work in progress.
-Read the [documentation](/documentation/readme.md) for more info.
+Read the [documentation](/documentation/Readme.md) for more info.
