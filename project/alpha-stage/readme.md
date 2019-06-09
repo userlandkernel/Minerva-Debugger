@@ -1,2 +1,2 @@
 # Work in progress.
-Read the [documentation](../../) for more info.
+Read the [documentation](/) for more info.
