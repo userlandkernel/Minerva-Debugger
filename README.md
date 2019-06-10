@@ -23,7 +23,7 @@ Providing a great interface to kernel, hardware, threads and processes in a grea
 2. Don't make a pull request for offsets, it will be ignored. Instead file an issue please.  
 3. Each person adding valid and correct offsets deserves credit.  
 4. A script for generating a struct of (most) symbol offsets from a kernel will be posted here soon. Built w/ python, radare2 and awk.  
-5. Most patch offsets need to be found manually. See my unstripped kexts repository and use [Diaphora](https://diaphora.re) to symbolicate the kernel. Use [XNU source code](https://github.com/UKERN-developers/darwin-xnu) for importing local types into IDA.  
+5. Most patch offsets need to be found manually. See my unstripped kexts repository and use [Diaphora](http://diaphora.re) to symbolicate the kernel. Use [XNU source code](https://github.com/UKERN-developers/darwin-xnu) for importing local types into IDA.  
 
 ## Contributing to code & Documentation
 - See [Documentation](documentation)
