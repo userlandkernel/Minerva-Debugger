@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA48380F229B5E4300C30D4E /* physutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EA48380D229B5E4300C30D4E /* physutils.c */; };
+		EA483812229B6D0E00C30D4E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EA483810229B6D0E00C30D4E /* kutils.c */; };
+		EAAA722C227F98470071E7AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA722B227F98470071E7AD /* AppDelegate.m */; };
+		EAAA722F227F98470071E7AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA722E227F98470071E7AD /* ViewController.m */; };
+		EAAA7232227F98470071E7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAA7230227F98470071E7AD /* Main.storyboard */; };
+		EAAA7235227F98470071E7AD /* minervadebugger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7233227F98470071E7AD /* minervadebugger.xcdatamodeld */; };
+		EAAA7237227F98490071E7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAA7236227F98490071E7AD /* Assets.xcassets */; };
+		EAAA723A227F98490071E7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAA7238227F98490071E7AD /* LaunchScreen.storyboard */; };
+		EAAA723D227F98490071E7AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA723C227F98490071E7AD /* main.m */; };
+		EAAA7257227F98D50071E7AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA7256227F98D50071E7AD /* SystemConfiguration.framework */; };
+		EAAA7259227F98DD0071E7AD /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA7258227F98DD0071E7AD /* Network.framework */; };
+		EAAA725B227F98E60071E7AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA725A227F98E60071E7AD /* QuartzCore.framework */; };
+		EAAA7267227F99570071E7AD /* kcall.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7265227F99570071E7AD /* kcall.c */; };
+		EAAA726A227F99660071E7AD /* kexec.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7268227F99650071E7AD /* kexec.c */; };
+		EAAA726D227F99720071E7AD /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA726B227F99720071E7AD /* kmem.c */; };
+		EAAA7270227F99820071E7AD /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA726E227F99820071E7AD /* kutils.c */; };
+		EAAA7274227F9B110071E7AD /* minerva.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7272227F9B110071E7AD /* minerva.m */; };
+		EAAA7277227F9EBB0071E7AD /* patchfinder.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA7275227F9EBB0071E7AD /* patchfinder.c */; };
+		EAAA727A227FA0280071E7AD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA7279227FA0280071E7AD /* AudioToolbox.framework */; };
+		EAAA727C227FA02C0071E7AD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA727B227FA02C0071E7AD /* ExternalAccessory.framework */; };
+		EAAA7280227FA8980071E7AD /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA727F227FA8980071E7AD /* libc++abi.tbd */; };
+		EAAA7287227FCF070071E7AD /* jelbreklib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA7284227FC4960071E7AD /* jelbreklib.a */; };
+		EAAB8B6A22AC3C0E0038568C /* serial.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6822AC3C0E0038568C /* serial.c */; };
+		EAAB8B6D22AC41EC0038568C /* videoconsole.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6B22AC41EC0038568C /* videoconsole.c */; };
+		EAAB8B7022AC45370038568C /* debugutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6E22AC45370038568C /* debugutils.c */; };
+		EAAB8B7322AC4F650038568C /* SYS_ARM64.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7122AC4F650038568C /* SYS_ARM64.c */; };
+		EAAB8B7622AC6CDA0038568C /* devicetree.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7422AC6CDA0038568C /* devicetree.c */; };
+		EAAB8B7922AD39C00038568C /* offsets.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7722AD39C00038568C /* offsets.c */; };
+		EAAD839222A7539400EB6DCB /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAD839022A7539400EB6DCB /* init.c */; };
+		EAB5609B22AB4DFF00C6739B /* sbsuspend.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB5609A22AB4DFF00C6739B /* sbsuspend.m */; };
+		EAC35B3B22A0277400C5ACBE /* pwnvfspolicy.c in Sources */ = {isa = PBXBuildFile; fileRef = EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA48380D229B5E4300C30D4E /* physutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = physutils.c; sourceTree = "<group>"; };
+		EA48380E229B5E4300C30D4E /* physutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = physutils.h; sourceTree = "<group>"; };
+		EA483810229B6D0E00C30D4E /* kutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kutils.c; sourceTree = "<group>"; };
+		EA483811229B6D0E00C30D4E /* kutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
+		EAAA7227227F98470071E7AD /* minervadebugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minervadebugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAA722A227F98470071E7AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EAAA722B227F98470071E7AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EAAA722D227F98470071E7AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EAAA722E227F98470071E7AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EAAA7231227F98470071E7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAAA7234227F98470071E7AD /* minervadebugger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = minervadebugger.xcdatamodel; sourceTree = "<group>"; };
+		EAAA7236227F98490071E7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAAA7239227F98490071E7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAAA723B227F98490071E7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAAA723C227F98490071E7AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EAAA7256227F98D50071E7AD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EAAA7258227F98DD0071E7AD /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		EAAA725A227F98E60071E7AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EAAA7265227F99570071E7AD /* kcall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kcall.c; sourceTree = "<group>"; };
+		EAAA7266227F99570071E7AD /* kcall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kcall.h; sourceTree = "<group>"; };
+		EAAA7268227F99650071E7AD /* kexec.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kexec.c; sourceTree = "<group>"; };
+		EAAA7269227F99660071E7AD /* kexec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kexec.h; sourceTree = "<group>"; };
+		EAAA726B227F99720071E7AD /* kmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
+		EAAA726C227F99720071E7AD /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
+		EAAA726E227F99820071E7AD /* kutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kutils.c; sourceTree = "<group>"; };
+		EAAA726F227F99820071E7AD /* kutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
+		EAAA7272227F9B110071E7AD /* minerva.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = minerva.m; sourceTree = "<group>"; };
+		EAAA7273227F9B110071E7AD /* minerva.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minerva.h; sourceTree = "<group>"; };
+		EAAA7275227F9EBB0071E7AD /* patchfinder.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = patchfinder.c; sourceTree = "<group>"; };
+		EAAA7276227F9EBB0071E7AD /* patchfinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = patchfinder.h; sourceTree = "<group>"; };
+		EAAA7278227FA0280071E7AD /* minervadebugger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minervadebugger.entitlements; sourceTree = "<group>"; };
+		EAAA7279227FA0280071E7AD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EAAA727B227FA02C0071E7AD /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		EAAA727D227FA6990071E7AD /* jelbreklib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = jelbreklib.a; path = minervadebugger/Libraries/jelbreklib.a; sourceTree = "<group>"; };
+		EAAA727F227FA8980071E7AD /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		EAAA7281227FC39E0071E7AD /* patchfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = patchfinder64.a; path = minervadebugger/Libraries/patchfinder64.a; sourceTree = "<group>"; };
+		EAAA7284227FC4960071E7AD /* jelbreklib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = jelbreklib.a; sourceTree = "<group>"; };
+		EAAA7285227FC4960071E7AD /* patchfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = patchfinder64.a; sourceTree = "<group>"; };
+		EAAB8B6822AC3C0E0038568C /* serial.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = serial.c; sourceTree = "<group>"; };
+		EAAB8B6922AC3C0E0038568C /* serial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serial.h; sourceTree = "<group>"; };
+		EAAB8B6B22AC41EC0038568C /* videoconsole.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = videoconsole.c; sourceTree = "<group>"; };
+		EAAB8B6C22AC41EC0038568C /* videoconsole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = videoconsole.h; sourceTree = "<group>"; };
+		EAAB8B6E22AC45370038568C /* debugutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = debugutils.c; sourceTree = "<group>"; };
+		EAAB8B6F22AC45370038568C /* debugutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debugutils.h; sourceTree = "<group>"; };
+		EAAB8B7122AC4F650038568C /* SYS_ARM64.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SYS_ARM64.c; sourceTree = "<group>"; };
+		EAAB8B7222AC4F650038568C /* SYS_ARM64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYS_ARM64.h; sourceTree = "<group>"; };
+		EAAB8B7422AC6CDA0038568C /* devicetree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = devicetree.c; sourceTree = "<group>"; };
+		EAAB8B7522AC6CDA0038568C /* devicetree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = devicetree.h; sourceTree = "<group>"; };
+		EAAB8B7722AD39C00038568C /* offsets.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = offsets.c; sourceTree = "<group>"; };
+		EAAB8B7822AD39C00038568C /* offsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		EAAD838F22A7529000EB6DCB /* xnu-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "xnu-header.h"; sourceTree = "<group>"; };
+		EAAD839022A7539400EB6DCB /* init.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init.c; sourceTree = "<group>"; };
+		EAAD839122A7539400EB6DCB /* init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = init.h; sourceTree = "<group>"; };
+		EAB5609A22AB4DFF00C6739B /* sbsuspend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sbsuspend.m; sourceTree = "<group>"; };
+		EAB5609C22AB4E3900C6739B /* sbsuspend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sbsuspend.h; sourceTree = "<group>"; };
+		EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pwnvfspolicy.c; sourceTree = "<group>"; };
+		EAC35B3A22A0277400C5ACBE /* pwnvfspolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pwnvfspolicy.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAAA7224227F98470071E7AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAA7287227FCF070071E7AD /* jelbreklib.a in Frameworks */,
+				EAAA7280227FA8980071E7AD /* libc++abi.tbd in Frameworks */,
+				EAAA725B227F98E60071E7AD /* QuartzCore.framework in Frameworks */,
+				EAAA727C227FA02C0071E7AD /* ExternalAccessory.framework in Frameworks */,
+				EAAA7259227F98DD0071E7AD /* Network.framework in Frameworks */,
+				EAAA7257227F98D50071E7AD /* SystemConfiguration.framework in Frameworks */,
+				EAAA727A227FA0280071E7AD /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAAA721E227F98470071E7AD = {
+			isa = PBXGroup;
+			children = (
+				EAAA7229227F98470071E7AD /* minervadebugger */,
+				EAAA7228227F98470071E7AD /* Products */,
+				EAAA7255227F98D50071E7AD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EAAA7228227F98470071E7AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7227227F98470071E7AD /* minervadebugger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAAA7229227F98470071E7AD /* minervadebugger */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7278227FA0280071E7AD /* minervadebugger.entitlements */,
+				EAAA7264227F99450071E7AD /* Headers */,
+				EAAA725C227F98FD0071E7AD /* Core */,
+				EAAA7251227F98510071E7AD /* App */,
+				EAAA723C227F98490071E7AD /* main.m */,
+			);
+			path = minervadebugger;
+			sourceTree = "<group>";
+		};
+		EAAA7251227F98510071E7AD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7254227F98840071E7AD /* Assets */,
+				EAAA7253227F98710071E7AD /* Views */,
+				EAAA7252227F98600071E7AD /* Controllers */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EAAA7252227F98600071E7AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA722D227F98470071E7AD /* ViewController.h */,
+				EAAA722E227F98470071E7AD /* ViewController.m */,
+				EAAA722A227F98470071E7AD /* AppDelegate.h */,
+				EAAA722B227F98470071E7AD /* AppDelegate.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EAAA7253227F98710071E7AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7238227F98490071E7AD /* LaunchScreen.storyboard */,
+				EAAA7230227F98470071E7AD /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EAAA7254227F98840071E7AD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7233227F98470071E7AD /* minervadebugger.xcdatamodeld */,
+				EAAA723B227F98490071E7AD /* Info.plist */,
+				EAAA7236227F98490071E7AD /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EAAA7255227F98D50071E7AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7283227FC4960071E7AD /* Libraries */,
+				EAAA7281227FC39E0071E7AD /* patchfinder64.a */,
+				EAAA727F227FA8980071E7AD /* libc++abi.tbd */,
+				EAAA727D227FA6990071E7AD /* jelbreklib.a */,
+				EAAA727B227FA02C0071E7AD /* ExternalAccessory.framework */,
+				EAAA7279227FA0280071E7AD /* AudioToolbox.framework */,
+				EAAA725A227F98E60071E7AD /* QuartzCore.framework */,
+				EAAA7258227F98DD0071E7AD /* Network.framework */,
+				EAAA7256227F98D50071E7AD /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAAA725C227F98FD0071E7AD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7271227F9B050071E7AD /* Minerva */,
+				EAAA7260227F991F0071E7AD /* Patches */,
+				EAAA725F227F99170071E7AD /* Primitives */,
+				EAAA725E227F990E0071E7AD /* KDP */,
+				EAAA725D227F99030071E7AD /* Commands */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EAAA725D227F99030071E7AD /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		EAAA725E227F990E0071E7AD /* KDP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KDP;
+			sourceTree = "<group>";
+		};
+		EAAA725F227F99170071E7AD /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7263227F99330071E7AD /* Patchfinder */,
+				EAAA7262227F992E0071E7AD /* Userland */,
+				EAAA7261227F99290071E7AD /* Kernel */,
+			);
+			path = Primitives;
+			sourceTree = "<group>";
+		};
+		EAAA7260227F991F0071E7AD /* Patches */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Patches;
+			sourceTree = "<group>";
+		};
+		EAAA7261227F99290071E7AD /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7266227F99570071E7AD /* kcall.h */,
+				EAAA7265227F99570071E7AD /* kcall.c */,
+				EAAA7269227F99660071E7AD /* kexec.h */,
+				EAAA7268227F99650071E7AD /* kexec.c */,
+				EAAA726C227F99720071E7AD /* kmem.h */,
+				EAAA726B227F99720071E7AD /* kmem.c */,
+				EAAA726F227F99820071E7AD /* kutils.h */,
+				EAAA726E227F99820071E7AD /* kutils.c */,
+			);
+			path = Kernel;
+			sourceTree = "<group>";
+		};
+		EAAA7262227F992E0071E7AD /* Userland */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Userland;
+			sourceTree = "<group>";
+		};
+		EAAA7263227F99330071E7AD /* Patchfinder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Patchfinder;
+			sourceTree = "<group>";
+		};
+		EAAA7264227F99450071E7AD /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		EAAA7271227F9B050071E7AD /* Minerva */ = {
+			isa = PBXGroup;
+			children = (
+				EAC35B3F22A02CC100C5ACBE /* Gadgets */,
+				EAC35B3E22A02CA700C5ACBE /* Tools */,
+				EAC35B3D22A02C9D00C5ACBE /* Symbols */,
+				EAC35B3C22A02C9000C5ACBE /* Logic */,
+				EAC35B3822A0274800C5ACBE /* BypassVnodeVFS */,
+			);
+			path = Minerva;
+			sourceTree = "<group>";
+		};
+		EAAA7283227FC4960071E7AD /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7284227FC4960071E7AD /* jelbreklib.a */,
+				EAAA7285227FC4960071E7AD /* patchfinder64.a */,
+			);
+			name = Libraries;
+			path = minervadebugger/Libraries;
+			sourceTree = "<group>";
+		};
+		EAC35B3822A0274800C5ACBE /* BypassVnodeVFS */ = {
+			isa = PBXGroup;
+			children = (
+				EAC35B3A22A0277400C5ACBE /* pwnvfspolicy.h */,
+				EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */,
+			);
+			name = BypassVnodeVFS;
+			sourceTree = "<group>";
+		};
+		EAC35B3C22A02C9000C5ACBE /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7273227F9B110071E7AD /* minerva.h */,
+				EAAA7272227F9B110071E7AD /* minerva.m */,
+				EAAD839122A7539400EB6DCB /* init.h */,
+				EAAD839022A7539400EB6DCB /* init.c */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		EAC35B3D22A02C9D00C5ACBE /* Symbols */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA7276227F9EBB0071E7AD /* patchfinder.h */,
+				EAAA7275227F9EBB0071E7AD /* patchfinder.c */,
+				EAAB8B7822AD39C00038568C /* offsets.h */,
+				EAAB8B7722AD39C00038568C /* offsets.c */,
+			);
+			name = Symbols;
+			sourceTree = "<group>";
+		};
+		EAC35B3E22A02CA700C5ACBE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				EA483811229B6D0E00C30D4E /* kutils.h */,
+				EA483810229B6D0E00C30D4E /* kutils.c */,
+				EAB5609C22AB4E3900C6739B /* sbsuspend.h */,
+				EAB5609A22AB4DFF00C6739B /* sbsuspend.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		EAC35B3F22A02CC100C5ACBE /* Gadgets */ = {
+			isa = PBXGroup;
+			children = (
+				EAAD838F22A7529000EB6DCB /* xnu-header.h */,
+				EA48380E229B5E4300C30D4E /* physutils.h */,
+				EA48380D229B5E4300C30D4E /* physutils.c */,
+				EAAB8B6922AC3C0E0038568C /* serial.h */,
+				EAAB8B6822AC3C0E0038568C /* serial.c */,
+				EAAB8B6C22AC41EC0038568C /* videoconsole.h */,
+				EAAB8B6B22AC41EC0038568C /* videoconsole.c */,
+				EAAB8B6F22AC45370038568C /* debugutils.h */,
+				EAAB8B6E22AC45370038568C /* debugutils.c */,
+				EAAB8B7222AC4F650038568C /* SYS_ARM64.h */,
+				EAAB8B7122AC4F650038568C /* SYS_ARM64.c */,
+				EAAB8B7522AC6CDA0038568C /* devicetree.h */,
+				EAAB8B7422AC6CDA0038568C /* devicetree.c */,
+			);
+			name = Gadgets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAAA7226227F98470071E7AD /* minervadebugger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAAA724B227F98490071E7AD /* Build configuration list for PBXNativeTarget "minervadebugger" */;
+			buildPhases = (
+				EAAA7223227F98470071E7AD /* Sources */,
+				EAAA7224227F98470071E7AD /* Frameworks */,
+				EAAA7225227F98470071E7AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = minervadebugger;
+			productName = minervadebugger;
+			productReference = EAAA7227227F98470071E7AD /* minervadebugger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAAA721F227F98470071E7AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Sem Voigtländer";
+				TargetAttributes = {
+					EAAA7226227F98470071E7AD = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = EAAA7222227F98470071E7AD /* Build configuration list for PBXProject "minervadebugger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAAA721E227F98470071E7AD;
+			productRefGroup = EAAA7228227F98470071E7AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAAA7226227F98470071E7AD /* minervadebugger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAAA7225227F98470071E7AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAA723A227F98490071E7AD /* LaunchScreen.storyboard in Resources */,
+				EAAA7237227F98490071E7AD /* Assets.xcassets in Resources */,
+				EAAA7232227F98470071E7AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAAA7223227F98470071E7AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAAB8B7922AD39C00038568C /* offsets.c in Sources */,
+				EAAD839222A7539400EB6DCB /* init.c in Sources */,
+				EAAA726D227F99720071E7AD /* kmem.c in Sources */,
+				EAAA726A227F99660071E7AD /* kexec.c in Sources */,
+				EAAB8B7022AC45370038568C /* debugutils.c in Sources */,
+				EAAB8B7322AC4F650038568C /* SYS_ARM64.c in Sources */,
+				EAC35B3B22A0277400C5ACBE /* pwnvfspolicy.c in Sources */,
+				EA483812229B6D0E00C30D4E /* kutils.c in Sources */,
+				EA48380F229B5E4300C30D4E /* physutils.c in Sources */,
+				EAAB8B7622AC6CDA0038568C /* devicetree.c in Sources */,
+				EAAB8B6A22AC3C0E0038568C /* serial.c in Sources */,
+				EAAA7274227F9B110071E7AD /* minerva.m in Sources */,
+				EAAA7277227F9EBB0071E7AD /* patchfinder.c in Sources */,
+				EAAA7267227F99570071E7AD /* kcall.c in Sources */,
+				EAAA722F227F98470071E7AD /* ViewController.m in Sources */,
+				EAAA7235227F98470071E7AD /* minervadebugger.xcdatamodeld in Sources */,
+				EAAA7270227F99820071E7AD /* kutils.c in Sources */,
+				EAB5609B22AB4DFF00C6739B /* sbsuspend.m in Sources */,
+				EAAA723D227F98490071E7AD /* main.m in Sources */,
+				EAAA722C227F98470071E7AD /* AppDelegate.m in Sources */,
+				EAAB8B6D22AC41EC0038568C /* videoconsole.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EAAA7230227F98470071E7AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAA7231227F98470071E7AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAAA7238227F98490071E7AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAAA7239227F98490071E7AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAAA7249227F98490071E7AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EAAA724A227F98490071E7AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAAA724C227F98490071E7AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = minervadebugger/minervadebugger.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZCB79JJ2EN;
+				ENABLE_BITCODE = NO;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/minervadebugger/App/Assets/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/minervadebugger/Libraries",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					IOKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ml.jailed.minervadebugger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
+				STRIP_SWIFT_SYMBOLS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/$(PROJECT_NAME)/Headers/**";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_BUILDER = minerva;
+			};
+			name = Debug;
+		};
+		EAAA724D227F98490071E7AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = minervadebugger/minervadebugger.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZCB79JJ2EN;
+				ENABLE_BITCODE = NO;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/minervadebugger/App/Assets/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/minervadebugger/Libraries",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					IOKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ml.jailed.minervadebugger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				STRIP_STYLE = debugging;
+				STRIP_SWIFT_SYMBOLS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/$(PROJECT_NAME)/Headers/**";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_BUILDER = minerva;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAAA7222227F98470071E7AD /* Build configuration list for PBXProject "minervadebugger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAA7249227F98490071E7AD /* Debug */,
+				EAAA724A227F98490071E7AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAAA724B227F98490071E7AD /* Build configuration list for PBXNativeTarget "minervadebugger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAAA724C227F98490071E7AD /* Debug */,
+				EAAA724D227F98490071E7AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EAAA7233227F98470071E7AD /* minervadebugger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EAAA7234227F98470071E7AD /* minervadebugger.xcdatamodel */,
+			);
+			currentVersion = EAAA7234227F98470071E7AD /* minervadebugger.xcdatamodel */;
+			path = minervadebugger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EAAA721F227F98470071E7AD /* Project object */;
+}
