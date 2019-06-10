@@ -2,7 +2,11 @@
 Providing a great interface to kernel, hardware, threads and processes in a great research environment. (WIP)
 
 ## How To
-- Jailbreak exporting HSP4
+1. Jailbreak exporting HSP4.  
+2. Attach iPhone via Serial Cable (Alex DCSD), for now but not for long.
+3. Run nanokdp or termz to see serial output at default baudrate (115200).  
+4. Compile and run app.  
+
 
 ## Contributing
 - See [Documentation](documentation)
