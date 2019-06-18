@@ -10,6 +10,7 @@
 #include <mach/machvm.h>
 #include "physutils.h"
 #include "offsets.h"
+#include "debugutils.h"
 
 
 escalation_data_t escalation = {};
@@ -173,6 +174,9 @@ kern_return_t kernel_thread_start_priority(mach_vm_address_t continuation, mach_
     mach_vm_address_t thread = Kernel_alloc(sizeof(mach_vm_address_t));
     kern_return_t err = (kern_return_t)Kernel_Execute(SYMOFF(_KERNEL_THREAD_START_PRIORITY), continuation, parameter, priority, thread, 0, 0, 0);
     *new_thread = thread;
+    arm_thread_state64_t ts = {};
+    copyin(&ts, ReadAnywhere64(thread), sizeof(arm_thread_state64_t));
+    print_threadstate(ts);
     return err;
 }
 

@@ -23,4 +23,5 @@ const char* ml_dbgwrap_strerror(dbgwrap_status_t status); //get string value for
 void trap_set_cpustate(dbgwrap_thread_state_t userland_state);
 void kernel_debug_string_simple(uint32_t eventid, const char *message);
 mach_vm_address_t PE_arm_get_soc_base_phys(void);
+void print_threadstate(dbgwrap_thread_state_t state);
 #endif /* debugutils_h */

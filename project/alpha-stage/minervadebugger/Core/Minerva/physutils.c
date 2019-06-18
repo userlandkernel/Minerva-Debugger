@@ -88,15 +88,15 @@ mach_vm_address_t IOMemoryMapGetVirtualAddress(mach_vm_address_t memoryMap){
 }
 
 mach_vm_address_t kvtophys(mach_vm_address_t vaddr){
-    return Kernel_Execute(0xFFFFFFF0071AF7F8+slide, vaddr, 0, 0, 0, 0, 0, 0);
+    return Kernel_Execute(SYMOFF(_KVTOPHYS), vaddr, 0, 0, 0, 0, 0, 0);
 }
 
 mach_vm_address_t phystokv(mach_vm_address_t paddr){
-    return Kernel_Execute(0xFFFFFFF0071BBA04+slide, paddr, 0, 0, 0, 0, 0, 0);
+    return Kernel_Execute(SYMOFF(_PHYSTOKV), paddr, 0, 0, 0, 0, 0, 0);
 }
 
 void bcopy_phys(mach_vm_address_t dst, mach_vm_address_t src, mach_vm_size_t size){
-    Kernel_Execute(0xFFFFFFF0071BC99C+slide, dst, src, size, 0, 0, 0, 0);
+    Kernel_Execute(SYMOFF(_BCOPY_PHYS), dst, src, size, 0, 0, 0, 0);
 }
 
 

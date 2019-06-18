@@ -34,7 +34,7 @@
 }
 
 + (mach_port_t)mainSpringBoardServicesMachPort {
-    mach_port_t (*SBSSpringBoardServerPort)() = dlsym(SpringBoardServicesHandle, "SBSSpringBoardServerPort");
+    mach_port_t (*SBSSpringBoardServerPort)(void) = dlsym(SpringBoardServicesHandle, "SBSSpringBoardServerPort");
     NSParameterAssert(SBSSpringBoardServerPort);
     return SBSSpringBoardServerPort();
 }
@@ -76,7 +76,7 @@
 }
 
 - (void)SBSUndimScreen{
-    void *(*SBSUndimScreen)() = dlsym(SpringBoardServicesHandle, "SBSUndimScreen");
+    void *(*SBSUndimScreen)(void) = dlsym(SpringBoardServicesHandle, "SBSUndimScreen");
     NSParameterAssert(SBSUndimScreen);
     SBSUndimScreen();
 }

@@ -55,16 +55,15 @@ bool serial_enable_log(void){
     WriteAnywhere32(SYMOFF(_KDEBUG_ENABLE), KDEBUG_ENABLE_TRACE|KDEBUG_ENABLE_SERIAL|KDEBUG_ENABLE_ENTROPY|KDEBUG_ENABLE_PPT|KDEBUG_ENABLE_CHUD); // Enable all debugging
     
     printf("Enabling codesignature debugging...\n");
-    WriteAnywhere32(SYMOFF(_CS_DEBUG), TRUE); // Enable codesigning debugging
+    WriteAnywhere32(SYMOFF(_CS_DEBUG), 1337); // Enable codesigning debugging
     
     printf("Enabling panic debugging...\n");
     WriteAnywhere32(PATCHOFF(ENABLE_PANICDBG), TRUE); // Enable panic debugging
     
     printf("Enabling IOKit debugging...\n");
     WriteAnywhere64(SYMOFF(_GIOKITDEBUG),kOSRegistryModsMode|
-                    kIOTrackingBoot|kIOWaitQuietBeforeRoot|
-                    kIOTracking|
-                    kIONoFreeObjects|kIOLogAttach|
+                    kIOTrackingBoot|
+                    kIOTracking|kIOLogAttach|
                     kIOLogCatalogue|kIOLogConfig|
                     kIOLogDebugPower|kIOLogDTree|
                     kIOLogHibernate|kIOLogKextMemory|
@@ -101,6 +100,7 @@ void serial_keyboard_init(void){
     // serial keyboard start
     mach_vm_address_t thread = 0;
     kernel_thread_start_priority(0xFFFFFFF00719FFBC+slide, 0, MAXPRI_KERNEL, &thread);
+    printf("Serial keyboard running on thread %#llx (%#llx -> %#llx)\n", thread, ReadAnywhere64(thread), ReadAnywhere64(ReadAnywhere64(thread)));
 }
 
 void serial_init(void){
@@ -129,5 +129,6 @@ void serial_kprint(mach_vm_address_t addr){
     serial_print(str);
     if(str){
         free(str);
+        str = NULL;
     }
 }

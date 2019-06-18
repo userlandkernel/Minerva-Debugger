@@ -2301,6 +2301,7 @@ typedef struct minerva_symbol_offsets {
     kaddr_t _BLOCK_SIZE;
     kaddr_t _DEBUGFLAG;
     kaddr_t _DEBUGGER;
+    kaddr_t _DTFINDENTRY;
     kaddr_t _DTGETPROPERTY;
     kaddr_t _DTLOOKUPENTRY;
     kaddr_t _IOALIGNMENTTOSIZE;
@@ -3409,6 +3410,7 @@ typedef struct minerva_symbol_offsets {
     kaddr_t _KDP_SET_IP_AND_MAC_ADDRESSES;
     kaddr_t _KDP_UNREGISTER_LINK;
     kaddr_t _KDP_UNREGISTER_SEND_RECEIVE;
+    kaddr_t _KVTOPHYS;
     kaddr_t _KERN_ALLOCATION_GET_NAME;
     kaddr_t _KERN_ALLOCATION_NAME_ALLOCATE;
     kaddr_t _KERN_ALLOCATION_NAME_RELEASE;
@@ -3939,6 +3941,7 @@ typedef struct minerva_symbol_offsets {
     kaddr_t _PGTRACE_START;
     kaddr_t _PGTRACE_STOP;
     kaddr_t _PHYSIO;
+    kaddr_t _PHYSTOKV;
     kaddr_t _PMAP_FIND_PHYS;
     kaddr_t _PMAP_INITIALIZE_LEGACY_STATIC_TRUST_CACHE;
     kaddr_t _PMAP_IOMMU_INIT;

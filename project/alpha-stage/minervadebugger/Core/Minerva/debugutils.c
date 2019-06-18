@@ -11,6 +11,7 @@
 #include "serial.h"
 #include "offsets.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 boolean_t ml_set_interrupts_enabled(boolean_t enable) {
     return (boolean_t)Kernel_Execute(SYMOFF(_ML_SET_INTERRUPTS_ENABLED), enable, 0, 0, 0, 0, 0, 0);
@@ -55,12 +56,18 @@ dbgwrap_status_t ml_dbgwrap_halt_cpu_with_state(int cpu_index, uint64_t timeout_
 void print_threadstate(dbgwrap_thread_state_t state){
     for(int i = 0; i < sizeof(state.__x) / sizeof(state.__x[0]); i++){
         printf("x%d = %#llx\n",i, state.__x[i]);
+        serial_printf("x%d = %#llx\n",i, state.__x[i]);
     }
     printf("pc = %#llx\n", state.__pc);
+    serial_printf("pc = %#llx\n", state.__pc);
     printf("lr = %#llx\n", state.__lr);
+    serial_printf("lr = %#llx\n", state.__lr);
     printf("fp = %#llx\n", state.__fp);
+    serial_printf("fp = %#llx\n", state.__fp);
     printf("sp = %#llx\n", state.__sp);
+    serial_printf("sp = %#llx\n", state.__sp);
     printf("cpsr = %#x\n", state.__cpsr);
+    serial_printf("cpsr = %#x\n", state.__cpsr);
 }
 
 

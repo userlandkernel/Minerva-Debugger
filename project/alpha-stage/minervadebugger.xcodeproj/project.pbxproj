@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA48380F229B5E4300C30D4E /* physutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EA48380D229B5E4300C30D4E /* physutils.c */; };
 		EA483812229B6D0E00C30D4E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EA483810229B6D0E00C30D4E /* kutils.c */; };
+		EA63006E22B98933003A88AE /* debugutils-test.c in Sources */ = {isa = PBXBuildFile; fileRef = EA63006C22B98933003A88AE /* debugutils-test.c */; };
 		EAAA722C227F98470071E7AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA722B227F98470071E7AD /* AppDelegate.m */; };
 		EAAA722F227F98470071E7AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA722E227F98470071E7AD /* ViewController.m */; };
 		EAAA7232227F98470071E7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAA7230227F98470071E7AD /* Main.storyboard */; };
@@ -32,11 +33,14 @@
 		EAAB8B6A22AC3C0E0038568C /* serial.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6822AC3C0E0038568C /* serial.c */; };
 		EAAB8B6D22AC41EC0038568C /* videoconsole.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6B22AC41EC0038568C /* videoconsole.c */; };
 		EAAB8B7022AC45370038568C /* debugutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6E22AC45370038568C /* debugutils.c */; };
-		EAAB8B7322AC4F650038568C /* SYS_ARM64.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7122AC4F650038568C /* SYS_ARM64.c */; };
+		EAAB8B7322AC4F650038568C /* defeat.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7122AC4F650038568C /* defeat.c */; };
 		EAAB8B7622AC6CDA0038568C /* devicetree.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7422AC6CDA0038568C /* devicetree.c */; };
 		EAAB8B7922AD39C00038568C /* offsets.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B7722AD39C00038568C /* offsets.c */; };
 		EAAD839222A7539400EB6DCB /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAD839022A7539400EB6DCB /* init.c */; };
 		EAB5609B22AB4DFF00C6739B /* sbsuspend.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB5609A22AB4DFF00C6739B /* sbsuspend.m */; };
+		EABF945F22B1190900864E61 /* kerneldec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EABF945D22B1190900864E61 /* kerneldec.cpp */; };
+		EABF946222B1195800864E61 /* lzssdec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EABF946022B1195800864E61 /* lzssdec.cpp */; };
+		EABF946522B128EC00864E61 /* kdpwrappers.c in Sources */ = {isa = PBXBuildFile; fileRef = EABF946322B128EC00864E61 /* kdpwrappers.c */; };
 		EAC35B3B22A0277400C5ACBE /* pwnvfspolicy.c in Sources */ = {isa = PBXBuildFile; fileRef = EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,9 @@
 		EA48380E229B5E4300C30D4E /* physutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = physutils.h; sourceTree = "<group>"; };
 		EA483810229B6D0E00C30D4E /* kutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kutils.c; sourceTree = "<group>"; };
 		EA483811229B6D0E00C30D4E /* kutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
+		EA63006C22B98933003A88AE /* debugutils-test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "debugutils-test.c"; sourceTree = "<group>"; };
+		EA63006D22B98933003A88AE /* debugutils-test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "debugutils-test.h"; sourceTree = "<group>"; };
+		EA63006F22B9894D003A88AE /* testconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testconfig.h; sourceTree = "<group>"; };
 		EAAA7227227F98470071E7AD /* minervadebugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minervadebugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAA722A227F98470071E7AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EAAA722B227F98470071E7AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,8 +92,8 @@
 		EAAB8B6C22AC41EC0038568C /* videoconsole.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = videoconsole.h; sourceTree = "<group>"; };
 		EAAB8B6E22AC45370038568C /* debugutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = debugutils.c; sourceTree = "<group>"; };
 		EAAB8B6F22AC45370038568C /* debugutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debugutils.h; sourceTree = "<group>"; };
-		EAAB8B7122AC4F650038568C /* SYS_ARM64.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SYS_ARM64.c; sourceTree = "<group>"; };
-		EAAB8B7222AC4F650038568C /* SYS_ARM64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYS_ARM64.h; sourceTree = "<group>"; };
+		EAAB8B7122AC4F650038568C /* defeat.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = defeat.c; sourceTree = "<group>"; };
+		EAAB8B7222AC4F650038568C /* defeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defeat.h; sourceTree = "<group>"; };
 		EAAB8B7422AC6CDA0038568C /* devicetree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = devicetree.c; sourceTree = "<group>"; };
 		EAAB8B7522AC6CDA0038568C /* devicetree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = devicetree.h; sourceTree = "<group>"; };
 		EAAB8B7722AD39C00038568C /* offsets.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = offsets.c; sourceTree = "<group>"; };
@@ -96,6 +103,13 @@
 		EAAD839122A7539400EB6DCB /* init.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = init.h; sourceTree = "<group>"; };
 		EAB5609A22AB4DFF00C6739B /* sbsuspend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sbsuspend.m; sourceTree = "<group>"; };
 		EAB5609C22AB4E3900C6739B /* sbsuspend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sbsuspend.h; sourceTree = "<group>"; };
+		EABF945C22B116A000864E61 /* mac_policy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mac_policy.h; sourceTree = "<group>"; };
+		EABF945D22B1190900864E61 /* kerneldec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kerneldec.cpp; sourceTree = "<group>"; };
+		EABF945E22B1190900864E61 /* kerneldec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kerneldec.h; sourceTree = "<group>"; };
+		EABF946022B1195800864E61 /* lzssdec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lzssdec.cpp; sourceTree = "<group>"; };
+		EABF946122B1195800864E61 /* lzssdec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lzssdec.h; sourceTree = "<group>"; };
+		EABF946322B128EC00864E61 /* kdpwrappers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kdpwrappers.c; sourceTree = "<group>"; };
+		EABF946422B128EC00864E61 /* kdpwrappers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kdpwrappers.h; sourceTree = "<group>"; };
 		EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pwnvfspolicy.c; sourceTree = "<group>"; };
 		EAC35B3A22A0277400C5ACBE /* pwnvfspolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pwnvfspolicy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA63006B22B98907003A88AE /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				EA63006F22B9894D003A88AE /* testconfig.h */,
+				EA63006D22B98933003A88AE /* debugutils-test.h */,
+				EA63006C22B98933003A88AE /* debugutils-test.c */,
+			);
+			name = tests;
+			sourceTree = "<group>";
+		};
 		EAAA721E227F98470071E7AD = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +249,8 @@
 		EAAA725E227F990E0071E7AD /* KDP */ = {
 			isa = PBXGroup;
 			children = (
+				EABF946422B128EC00864E61 /* kdpwrappers.h */,
+				EABF946322B128EC00864E61 /* kdpwrappers.c */,
 			);
 			path = KDP;
 			sourceTree = "<group>";
@@ -285,6 +311,7 @@
 		EAAA7271227F9B050071E7AD /* Minerva */ = {
 			isa = PBXGroup;
 			children = (
+				EA63006B22B98907003A88AE /* tests */,
 				EAC35B3F22A02CC100C5ACBE /* Gadgets */,
 				EAC35B3E22A02CA700C5ACBE /* Tools */,
 				EAC35B3D22A02C9D00C5ACBE /* Symbols */,
@@ -327,6 +354,7 @@
 		EAC35B3D22A02C9D00C5ACBE /* Symbols */ = {
 			isa = PBXGroup;
 			children = (
+				EABF945C22B116A000864E61 /* mac_policy.h */,
 				EAAA7276227F9EBB0071E7AD /* patchfinder.h */,
 				EAAA7275227F9EBB0071E7AD /* patchfinder.c */,
 				EAAB8B7822AD39C00038568C /* offsets.h */,
@@ -342,6 +370,10 @@
 				EA483810229B6D0E00C30D4E /* kutils.c */,
 				EAB5609C22AB4E3900C6739B /* sbsuspend.h */,
 				EAB5609A22AB4DFF00C6739B /* sbsuspend.m */,
+				EABF945E22B1190900864E61 /* kerneldec.h */,
+				EABF945D22B1190900864E61 /* kerneldec.cpp */,
+				EABF946122B1195800864E61 /* lzssdec.h */,
+				EABF946022B1195800864E61 /* lzssdec.cpp */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -358,8 +390,8 @@
 				EAAB8B6B22AC41EC0038568C /* videoconsole.c */,
 				EAAB8B6F22AC45370038568C /* debugutils.h */,
 				EAAB8B6E22AC45370038568C /* debugutils.c */,
-				EAAB8B7222AC4F650038568C /* SYS_ARM64.h */,
-				EAAB8B7122AC4F650038568C /* SYS_ARM64.c */,
+				EAAB8B7222AC4F650038568C /* defeat.h */,
+				EAAB8B7122AC4F650038568C /* defeat.c */,
 				EAAB8B7522AC6CDA0038568C /* devicetree.h */,
 				EAAB8B7422AC6CDA0038568C /* devicetree.c */,
 			);
@@ -455,21 +487,25 @@
 				EAAA726D227F99720071E7AD /* kmem.c in Sources */,
 				EAAA726A227F99660071E7AD /* kexec.c in Sources */,
 				EAAB8B7022AC45370038568C /* debugutils.c in Sources */,
-				EAAB8B7322AC4F650038568C /* SYS_ARM64.c in Sources */,
+				EAAB8B7322AC4F650038568C /* defeat.c in Sources */,
 				EAC35B3B22A0277400C5ACBE /* pwnvfspolicy.c in Sources */,
 				EA483812229B6D0E00C30D4E /* kutils.c in Sources */,
 				EA48380F229B5E4300C30D4E /* physutils.c in Sources */,
+				EABF946522B128EC00864E61 /* kdpwrappers.c in Sources */,
 				EAAB8B7622AC6CDA0038568C /* devicetree.c in Sources */,
+				EA63006E22B98933003A88AE /* debugutils-test.c in Sources */,
 				EAAB8B6A22AC3C0E0038568C /* serial.c in Sources */,
 				EAAA7274227F9B110071E7AD /* minerva.m in Sources */,
 				EAAA7277227F9EBB0071E7AD /* patchfinder.c in Sources */,
 				EAAA7267227F99570071E7AD /* kcall.c in Sources */,
 				EAAA722F227F98470071E7AD /* ViewController.m in Sources */,
+				EABF945F22B1190900864E61 /* kerneldec.cpp in Sources */,
 				EAAA7235227F98470071E7AD /* minervadebugger.xcdatamodeld in Sources */,
 				EAAA7270227F99820071E7AD /* kutils.c in Sources */,
 				EAB5609B22AB4DFF00C6739B /* sbsuspend.m in Sources */,
 				EAAA723D227F98490071E7AD /* main.m in Sources */,
 				EAAA722C227F98470071E7AD /* AppDelegate.m in Sources */,
+				EABF946222B1195800864E61 /* lzssdec.cpp in Sources */,
 				EAAB8B6D22AC41EC0038568C /* videoconsole.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

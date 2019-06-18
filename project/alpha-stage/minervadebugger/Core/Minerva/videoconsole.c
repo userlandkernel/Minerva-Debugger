@@ -34,5 +34,5 @@ void PE_init_console(mach_vm_address_t PE_Video, uint64_t mode){
     if(!PE_Video){
         PE_Video = 0xFFFFFFF007095CE8+slide;
     }
-    Kernel_Execute(0xFFFFFFF0071A5168+slide, PE_Video, mode, 0, 0, 0, 0, 0);
+    Kernel_Execute(0xFFFFFFF007579514+slide, 0, PE_Video, mode, 0, 0, 0, 0);
 }

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <mach/mach.h>
+void PE_init_printf(void);
 size_t serial_buffer_init(size_t size);
 void serial_print(const char *msg);
 void serial_kprint(mach_vm_address_t kaddr);
