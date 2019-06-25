@@ -9,8 +9,8 @@
 #include "physutils.h"
 #include "offsets.h"
 
-void ml_io_read(vm_offset_t phys_addr, vm_size_t size){
-    
+mach_vm_address_t ml_io_read(vm_offset_t phys_addr, vm_size_t size){
+    return Kernel_Execute(SYMOFF(_ML_IO_READ), phys_addr, size, 0, 0, 0, 0, 0);
 }
 
 mach_vm_address_t ml_phys_read(mach_vm_address_t paddr){

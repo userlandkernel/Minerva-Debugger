@@ -7,6 +7,7 @@
 //
 
 #include "kutils.h"
+#include <stdlib.h>
 #include <mach/machvm.h>
 #include "physutils.h"
 #include "offsets.h"

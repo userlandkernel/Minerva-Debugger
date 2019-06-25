@@ -1,0 +1,3 @@
+[submodule "minervadebugger/Sources/jelbrekLib"]
+	path = minervadebugger/Sources/jelbrekLib
+	url = https://github.com/jakeajames/jelbrekLib

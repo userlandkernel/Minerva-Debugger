@@ -47,6 +47,7 @@
 #include "kerneldec.h"
 #include "devicetree.h"
 #include "defeat.h"
+#include "mshell.h"
 
 mach_vm_address_t soc_base = 0;
 mach_vm_address_t amcc_base = 0;
@@ -85,12 +86,12 @@ void hexdump(uint8_t buffer[], int len)
 
 void loosen_macpolicies(void){
     printf("Loosening MAC policies...\n");
-    WriteAnywhere32(0xFFFFFFF0075FF710+slide, 0x0); // Patch mac policy vnode_enforce
-    SUPER_PRINTF("So did we disable vnode_enforce? %s\n", ReadAnywhere32(0xFFFFFFF0075FF710+slide) == 0 ? "yes" : "nope :(");
+    WriteAnywhere32(SLIDADDR(0xFFFFFFF0075FF710), 0x0); // Patch mac policy vnode_enforce
+    SUPER_PRINTF("So did we disable vnode_enforce? %s\n", ReadAnywhere32(SLIDADDR(0xFFFFFFF0075FF710)) == 0 ? "yes" : "nope :(");
 }
 
 void find_socbase(void){
-    soc_base = ReadAnywhere64(0xFFFFFFF007674040);
+    soc_base = ReadAnywhere64(SLIDADDR(0xFFFFFFF007674040));
     mach_vm_address_t entryP = 0;
     sleep(1);
     printf("SoC: %#llx\n", soc_base);
@@ -107,13 +108,14 @@ void find_socbase(void){
 void find_sysgadgets(void){
     printf("Finding ARM64 system instructions...\n");
     cpacr_gadget = find_cpacr_write();                      //set coprocessor active control register
-    minerva_info("cpacr at: %#llx\n", cpacr_gadget);
+    minerva_info("cpacr at: %#llx (%#llx)\n", cpacr_gadget, UNSLIDADDR(cpacr_gadget));
     
     ttbr0_el1_gadget = find_ttbr0_el1_write();
-    minerva_info("msr ttbr0_el1, x0 at: %#llx\n", ttbr0_el1_gadget);    // set translation table base register 0
+    minerva_info("msr ttbr0_el1, x0 at: %#llx (%#llx)\n", ttbr0_el1_gadget, UNSLIDADDR(ttbr0_el1_gadget));    // set translation table base register 0
 
     ttbr1_el1_gadget = find_ttbr1_el1_write();
-    minerva_info("msr ttbr1_el1, x0 at: %#llx\n", ttbr1_el1_gadget);    // set translation table base register 1
+    minerva_info("msr ttbr1_el1, x0 at: %#llx (%#llx)\n", ttbr1_el1_gadget, UNSLIDADDR(ttbr1_el1_gadget));    // set translation table base register 1
+    
 }
 
 void set_tlb0(mach_vm_address_t addr){  // Set firstlevel pagetable entries
@@ -280,7 +282,7 @@ kern_return_t minerva_init(void)
     }
     
     init_kernel(KernelRead, kbase, NULL); // Initialize patchfinder with the kernelbase
-    
+
     minerva_info("Unlocking the NVRAM...\n", nil);
     UnlockNVRAM(); // Unlock the NVRAM
     
@@ -293,16 +295,27 @@ kern_return_t minerva_init(void)
     minerva_info("Patching the virtual filesystem to have /AppleInternal...\n", nil);
   //  pwnvfs_make_appleinternal(); // PWN the virtual filesystem to have a /AppleInternal directory
     
-    minerva_warn("(Re)Initializing platform...", nil);
-    PE_initialize_platform(FALSE, 0);  // Reinit platform, 0 = use bootArgs constant from offsets
+    minerva_warn("(Re)Initializing platform...\n", nil);
+//    PE_initialize_platform(FALSE, 0);  // Reinit platform, 0 = use bootArgs constant from offsets
     
     minerva_info("Initializing serial output...\n", nil);
-    
-    console_init();
-    
+    // KernelWrite_32bits(0xFFFFFFF007095CF0+slide, 0);  // We can't patch data const :(
+
+  
     serial_init();
+    console_init();
+    PE_init_printf();
+    
+    PE_init_console(0, kPEReleaseScreen);
     PE_init_console(0, kPEDisableScreen);
-    //PE_init_console(0, kPETextMode);
+    PE_init_console(0, kPEAcquireScreen);
+    PE_init_console(0, kPETextScreen);
+    PE_init_console(0, kPETextMode);
+    
+   // KernelWrite_64bits(SYMOFF(_PE_PANIC_DEBUGGING_ENABLED), 0x1);
+  //  KernelWrite_64bits(SYMOFF(_PE_ARM_DEBUG_PANIC_HOOK), SYMOFF(_NULLOP));
+    
+   
     //PE_init_console(0, kPETextScreen);
 //    PE_init_console(0, kPEDisableScreen);   // Initialization of the videoconsole screen
         // We want a video console to be enabled
@@ -310,7 +323,7 @@ kern_return_t minerva_init(void)
  //   PE_init_console(0, kPEDisableScreen); // Serial for now
   //  PE_init_console(0, kPERefreshBootGraphics);
     // Just some example of serial prints, might be UART only idk
-    PE_init_printf();
+   
     serial_print("\n");
     serial_print("Debugger is on\n");
     serial_print("Welcome to @userlandkernel's Serial Log implementation. Have fun!\n");
@@ -327,11 +340,11 @@ kern_return_t minerva_init(void)
    
     // Finally enable the graphic console
     serial_print("Turning the graphical console on...\n");
-    gc_enable(TRUE);
+   // gc_enable(TRUE);
     
     // Finally enable video console
     serial_print("Turning the video console on...\n");
-    vc_enable(TRUE);
+   // vc_enable(TRUE);
  
     serial_print("\n");
     serial_kprint(kstring("We out here\n"));
@@ -348,8 +361,8 @@ kern_return_t minerva_init(void)
     serial_printf("Kernel virtual base: %#llx\n", KernelBase);
     serial_printf("Kernel physical base: %#llx\n", kvtophys(KernelBase));
     serial_printf("Panic debugging: %#x\n", ReadAnywhere32(PATCHOFF(ENABLE_PANICDBG)));
-    serial_printf("SoC Physical base: %#llx\n", ReadAnywhere64(0xFFFFFFF007674040+slide));
-    serial_printf("SoC Virtual base: %#llx\n", phystokv(ReadAnywhere64(0xFFFFFFF007674040+slide)));
+    serial_printf("SoC Physical base: %#llx\n", ReadAnywhere64(SLIDADDR(0xFFFFFFF007674040)));
+    serial_printf("SoC Virtual base: %#llx\n", phystokv(ReadAnywhere64(SLIDADDR(0xFFFFFFF007674040))));
     serial_printf("gPhysBase: %#llx\n", find_gPhysBase());
     serial_printf("TCR read access: %#llx\n", find_tcr_el1_read());
     serial_printf("TCR write access: %#llx\n", find_tcr_el1_write());
@@ -357,7 +370,7 @@ kern_return_t minerva_init(void)
     
     serial_print("\nAbout to fire the nukes...\n");
     
-    uint64_t entryp = find_entry() + slide;
+    uint64_t entryp = SLIDADDR(find_entry());
     serial_printf("Found entry: %#llx\n", entryp);
     uint64_t rvbar = entryp & (~0xFFF); // virtual base address register
     sleep(1);
@@ -368,7 +381,7 @@ kern_return_t minerva_init(void)
     uint64_t optr = find_register_value(rvbar+0x50, 20);
     serial_printf("Found optr: %#llx\n", optr);
     sleep(1);
-    uint64_t cpu_list = ReadAnywhere64(cpul - 0x10 /*the add 0x10, 0x10 instruction confuses findregval*/) - ReadAnywhere64(0xFFFFFFF007674040+slide) + phystokv(ReadAnywhere64(0xFFFFFFF007674040+slide));
+    uint64_t cpu_list = ReadAnywhere64(cpul - 0x10 /*the add 0x10, 0x10 instruction confuses findregval*/) - ReadAnywhere64(SLIDADDR(0xFFFFFFF007674040)) + phystokv(ReadAnywhere64(SLIDADDR(0xFFFFFFF007674040)));
     serial_printf("Found cpu list: %#llx\n", cpu_list);
     sleep(1);
     uint64_t cpu = ReadAnywhere64(cpu_list);
@@ -407,17 +420,23 @@ kern_return_t minerva_init(void)
      char c = 'A';
     for(int i = 1; i < 10; i++){
         SUPER_PRINTF("SERIAL_PUTC kernel thread #%d\n\n", i);
-       
         kernel_thread_start_priority(SYMOFF(_SERIAL_PUTC), c++, MAXPRI_KERNEL, &threads[i-1]);
     }
     serial_print("Thread test succeeded!\n");
     
     set_tcr(KERN_SUCCESS);
+   // backboardd_screensetup();
    // find_socbase(); // Panics, DT function wrappers are broken lol
-    term_kernel();
-    term_jelbrek();
+    printf("Preparing shell...\n");
+    sleep(3);
+    err = run_mshell(1337, NULL);
     
-    //exit(0);
+    SUPER_PRINTF("Running MSHELL on port 1337 %s", err == KERN_SUCCESS ? "succeeded!\n" : "failed.\n");
+    
+   // term_kernel();
+    //term_jelbrek();
+    
+   // exit(0);
     return err;
     
 }

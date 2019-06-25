@@ -84,4 +84,8 @@ kern_return_t machine_thread_get_state(mach_vm_address_t thread, thread_flavor_t
 #define slide escalation.kernel_slide
 #define kbase escalation.kernel_base
 
+#define kalloc Kernel_alloc
+#define kfree Kernel_free
+
+
 #endif /* kutils_h */

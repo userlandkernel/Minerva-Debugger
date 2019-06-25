@@ -30,6 +30,18 @@
 		EAAA727C227FA02C0071E7AD /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA727B227FA02C0071E7AD /* ExternalAccessory.framework */; };
 		EAAA7280227FA8980071E7AD /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA727F227FA8980071E7AD /* libc++abi.tbd */; };
 		EAAA7287227FCF070071E7AD /* jelbreklib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA7284227FC4960071E7AD /* jelbreklib.a */; };
+		EAAA85D222C2C19000748E88 /* mshell-ftp.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85D022C2C19000748E88 /* mshell-ftp.c */; };
+		EAAA85D622C2C1C800748E88 /* mshell_file_cmds.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85D422C2C1C800748E88 /* mshell_file_cmds.m */; };
+		EAAA85D922C2C21E00748E88 /* mshell_kern_cmds.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85D722C2C21D00748E88 /* mshell_kern_cmds.c */; };
+		EAAA85DC22C2C5F100748E88 /* mshell_dev_cmds.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85DA22C2C5F100748E88 /* mshell_dev_cmds.m */; };
+		EAAA85E022C2C7B200748E88 /* mshell_basic_cmds.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85DE22C2C7B200748E88 /* mshell_basic_cmds.c */; };
+		EAAA85E322C2C81700748E88 /* mshell_adv_cmds.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85E122C2C81700748E88 /* mshell_adv_cmds.m */; };
+		EAAA85E522C2C8D000748E88 /* libMachoManiac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA85E422C2C8CF00748E88 /* libMachoManiac.dylib */; };
+		EAAA85E722C2C8E000748E88 /* libmtftp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA85E622C2C8E000748E88 /* libmtftp.dylib */; };
+		EAAA85E922C2C90100748E88 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAA85E822C2C90000748E88 /* libiconv.tbd */; };
+		EAAA85ED22C2C98900748E88 /* mshell_cmd_bundle.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85EB22C2C98900748E88 /* mshell_cmd_bundle.c */; };
+		EAAA85F022C2CAA300748E88 /* mshell.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85EE22C2CAA300748E88 /* mshell.c */; };
+		EAAA85F422C2CB0D00748E88 /* simpleserver.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAA85F222C2CB0D00748E88 /* simpleserver.c */; };
 		EAAB8B6A22AC3C0E0038568C /* serial.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6822AC3C0E0038568C /* serial.c */; };
 		EAAB8B6D22AC41EC0038568C /* videoconsole.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6B22AC41EC0038568C /* videoconsole.c */; };
 		EAAB8B7022AC45370038568C /* debugutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EAAB8B6E22AC45370038568C /* debugutils.c */; };
@@ -42,6 +54,11 @@
 		EABF946222B1195800864E61 /* lzssdec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EABF946022B1195800864E61 /* lzssdec.cpp */; };
 		EABF946522B128EC00864E61 /* kdpwrappers.c in Sources */ = {isa = PBXBuildFile; fileRef = EABF946322B128EC00864E61 /* kdpwrappers.c */; };
 		EAC35B3B22A0277400C5ACBE /* pwnvfspolicy.c in Sources */ = {isa = PBXBuildFile; fileRef = EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */; };
+		EAD673F722BA876100162292 /* lorgnette.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD673F522BA876100162292 /* lorgnette.c */; };
+		EAD673FB22BA96C500162292 /* remotecall.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD673F922BA96C500162292 /* remotecall.c */; };
+		EAD673FE22BA96CF00162292 /* remotemem.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD673FC22BA96CF00162292 /* remotemem.c */; };
+		EAD6740122BA977C00162292 /* remoteports.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD673FF22BA977C00162292 /* remoteports.c */; };
+		EAD6740422BA97AD00162292 /* userlandgadgets.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD6740222BA97AD00162292 /* userlandgadgets.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +103,29 @@
 		EAAA7281227FC39E0071E7AD /* patchfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = patchfinder64.a; path = minervadebugger/Libraries/patchfinder64.a; sourceTree = "<group>"; };
 		EAAA7284227FC4960071E7AD /* jelbreklib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = jelbreklib.a; sourceTree = "<group>"; };
 		EAAA7285227FC4960071E7AD /* patchfinder64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = patchfinder64.a; sourceTree = "<group>"; };
+		EAAA85CE22C2C15800748E88 /* ANSIColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANSIColors.h; sourceTree = "<group>"; };
+		EAAA85D022C2C19000748E88 /* mshell-ftp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "mshell-ftp.c"; sourceTree = "<group>"; };
+		EAAA85D122C2C19000748E88 /* mshell-ftp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mshell-ftp.h"; sourceTree = "<group>"; };
+		EAAA85D422C2C1C800748E88 /* mshell_file_cmds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mshell_file_cmds.m; sourceTree = "<group>"; };
+		EAAA85D522C2C1C800748E88 /* mshell_file_cmds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell_file_cmds.h; sourceTree = "<group>"; };
+		EAAA85D722C2C21D00748E88 /* mshell_kern_cmds.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mshell_kern_cmds.c; sourceTree = "<group>"; };
+		EAAA85D822C2C21D00748E88 /* mshell_kern_cmds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell_kern_cmds.h; sourceTree = "<group>"; };
+		EAAA85DA22C2C5F100748E88 /* mshell_dev_cmds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mshell_dev_cmds.m; sourceTree = "<group>"; };
+		EAAA85DB22C2C5F100748E88 /* mshell_dev_cmds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell_dev_cmds.h; sourceTree = "<group>"; };
+		EAAA85DD22C2C78A00748E88 /* macops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macops.h; sourceTree = "<group>"; };
+		EAAA85DE22C2C7B200748E88 /* mshell_basic_cmds.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mshell_basic_cmds.c; sourceTree = "<group>"; };
+		EAAA85DF22C2C7B200748E88 /* mshell_basic_cmds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell_basic_cmds.h; sourceTree = "<group>"; };
+		EAAA85E122C2C81700748E88 /* mshell_adv_cmds.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mshell_adv_cmds.m; sourceTree = "<group>"; };
+		EAAA85E222C2C81700748E88 /* mshell_adv_cmds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell_adv_cmds.h; sourceTree = "<group>"; };
+		EAAA85E422C2C8CF00748E88 /* libMachoManiac.dylib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMachoManiac.dylib; path = minervadebugger/Libraries/libMachoManiac.dylib; sourceTree = "<group>"; };
+		EAAA85E622C2C8E000748E88 /* libmtftp.dylib */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmtftp.dylib; path = minervadebugger/Libraries/libmtftp.dylib; sourceTree = "<group>"; };
+		EAAA85E822C2C90000748E88 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		EAAA85EB22C2C98900748E88 /* mshell_cmd_bundle.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mshell_cmd_bundle.c; sourceTree = "<group>"; };
+		EAAA85EC22C2C98900748E88 /* mshell_cmd_bundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell_cmd_bundle.h; sourceTree = "<group>"; };
+		EAAA85EE22C2CAA300748E88 /* mshell.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mshell.c; sourceTree = "<group>"; };
+		EAAA85EF22C2CAA300748E88 /* mshell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mshell.h; sourceTree = "<group>"; };
+		EAAA85F222C2CB0D00748E88 /* simpleserver.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = simpleserver.c; sourceTree = "<group>"; };
+		EAAA85F322C2CB0D00748E88 /* simpleserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simpleserver.h; sourceTree = "<group>"; };
 		EAAB8B6822AC3C0E0038568C /* serial.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = serial.c; sourceTree = "<group>"; };
 		EAAB8B6922AC3C0E0038568C /* serial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = serial.h; sourceTree = "<group>"; };
 		EAAB8B6B22AC41EC0038568C /* videoconsole.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = videoconsole.c; sourceTree = "<group>"; };
@@ -112,6 +152,17 @@
 		EABF946422B128EC00864E61 /* kdpwrappers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kdpwrappers.h; sourceTree = "<group>"; };
 		EAC35B3922A0277400C5ACBE /* pwnvfspolicy.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pwnvfspolicy.c; sourceTree = "<group>"; };
 		EAC35B3A22A0277400C5ACBE /* pwnvfspolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pwnvfspolicy.h; sourceTree = "<group>"; };
+		EAD673F522BA876100162292 /* lorgnette.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lorgnette.c; sourceTree = "<group>"; };
+		EAD673F622BA876100162292 /* lorgnette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lorgnette.h; sourceTree = "<group>"; };
+		EAD673F822BA879300162292 /* lorgnette-structs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lorgnette-structs.h"; sourceTree = "<group>"; };
+		EAD673F922BA96C500162292 /* remotecall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = remotecall.c; sourceTree = "<group>"; };
+		EAD673FA22BA96C500162292 /* remotecall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = remotecall.h; sourceTree = "<group>"; };
+		EAD673FC22BA96CF00162292 /* remotemem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = remotemem.c; sourceTree = "<group>"; };
+		EAD673FD22BA96CF00162292 /* remotemem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = remotemem.h; sourceTree = "<group>"; };
+		EAD673FF22BA977C00162292 /* remoteports.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = remoteports.c; sourceTree = "<group>"; };
+		EAD6740022BA977C00162292 /* remoteports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = remoteports.h; sourceTree = "<group>"; };
+		EAD6740222BA97AD00162292 /* userlandgadgets.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = userlandgadgets.c; sourceTree = "<group>"; };
+		EAD6740322BA97AD00162292 /* userlandgadgets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userlandgadgets.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +170,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAA85E922C2C90100748E88 /* libiconv.tbd in Frameworks */,
 				EAAA7287227FCF070071E7AD /* jelbreklib.a in Frameworks */,
 				EAAA7280227FA8980071E7AD /* libc++abi.tbd in Frameworks */,
+				EAAA85E722C2C8E000748E88 /* libmtftp.dylib in Frameworks */,
+				EAAA85E522C2C8D000748E88 /* libMachoManiac.dylib in Frameworks */,
 				EAAA725B227F98E60071E7AD /* QuartzCore.framework in Frameworks */,
 				EAAA727C227FA02C0071E7AD /* ExternalAccessory.framework in Frameworks */,
 				EAAA7259227F98DD0071E7AD /* Network.framework in Frameworks */,
@@ -214,6 +268,9 @@
 		EAAA7255227F98D50071E7AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAAA85E822C2C90000748E88 /* libiconv.tbd */,
+				EAAA85E622C2C8E000748E88 /* libmtftp.dylib */,
+				EAAA85E422C2C8CF00748E88 /* libMachoManiac.dylib */,
 				EAAA7283227FC4960071E7AD /* Libraries */,
 				EAAA7281227FC39E0071E7AD /* patchfinder64.a */,
 				EAAA727F227FA8980071E7AD /* libc++abi.tbd */,
@@ -290,6 +347,14 @@
 		EAAA7262227F992E0071E7AD /* Userland */ = {
 			isa = PBXGroup;
 			children = (
+				EAD673FA22BA96C500162292 /* remotecall.h */,
+				EAD673F922BA96C500162292 /* remotecall.c */,
+				EAD673FD22BA96CF00162292 /* remotemem.h */,
+				EAD673FC22BA96CF00162292 /* remotemem.c */,
+				EAD6740022BA977C00162292 /* remoteports.h */,
+				EAD673FF22BA977C00162292 /* remoteports.c */,
+				EAD6740322BA97AD00162292 /* userlandgadgets.h */,
+				EAD6740222BA97AD00162292 /* userlandgadgets.c */,
 			);
 			path = Userland;
 			sourceTree = "<group>";
@@ -311,6 +376,7 @@
 		EAAA7271227F9B050071E7AD /* Minerva */ = {
 			isa = PBXGroup;
 			children = (
+				EAAA85CD22C2C14800748E88 /* shell */,
 				EA63006B22B98907003A88AE /* tests */,
 				EAC35B3F22A02CC100C5ACBE /* Gadgets */,
 				EAC35B3E22A02CA700C5ACBE /* Tools */,
@@ -329,6 +395,64 @@
 			);
 			name = Libraries;
 			path = minervadebugger/Libraries;
+			sourceTree = "<group>";
+		};
+		EAAA85CD22C2C14800748E88 /* shell */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA85F122C2CAFC00748E88 /* server */,
+				EAAA85EA22C2C95D00748E88 /* shell */,
+				EAAA85D322C2C1BA00748E88 /* cmds */,
+				EAAA85CF22C2C17900748E88 /* services */,
+				EAAA85CE22C2C15800748E88 /* ANSIColors.h */,
+			);
+			name = shell;
+			sourceTree = "<group>";
+		};
+		EAAA85CF22C2C17900748E88 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA85D122C2C19000748E88 /* mshell-ftp.h */,
+				EAAA85D022C2C19000748E88 /* mshell-ftp.c */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		EAAA85D322C2C1BA00748E88 /* cmds */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA85D522C2C1C800748E88 /* mshell_file_cmds.h */,
+				EAAA85D422C2C1C800748E88 /* mshell_file_cmds.m */,
+				EAAA85D822C2C21D00748E88 /* mshell_kern_cmds.h */,
+				EAAA85D722C2C21D00748E88 /* mshell_kern_cmds.c */,
+				EAAA85DB22C2C5F100748E88 /* mshell_dev_cmds.h */,
+				EAAA85DA22C2C5F100748E88 /* mshell_dev_cmds.m */,
+				EAAA85DF22C2C7B200748E88 /* mshell_basic_cmds.h */,
+				EAAA85DE22C2C7B200748E88 /* mshell_basic_cmds.c */,
+				EAAA85E222C2C81700748E88 /* mshell_adv_cmds.h */,
+				EAAA85E122C2C81700748E88 /* mshell_adv_cmds.m */,
+				EAAA85EC22C2C98900748E88 /* mshell_cmd_bundle.h */,
+				EAAA85EB22C2C98900748E88 /* mshell_cmd_bundle.c */,
+			);
+			name = cmds;
+			sourceTree = "<group>";
+		};
+		EAAA85EA22C2C95D00748E88 /* shell */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA85EF22C2CAA300748E88 /* mshell.h */,
+				EAAA85EE22C2CAA300748E88 /* mshell.c */,
+			);
+			name = shell;
+			sourceTree = "<group>";
+		};
+		EAAA85F122C2CAFC00748E88 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA85F322C2CB0D00748E88 /* simpleserver.h */,
+				EAAA85F222C2CB0D00748E88 /* simpleserver.c */,
+			);
+			name = server;
 			sourceTree = "<group>";
 		};
 		EAC35B3822A0274800C5ACBE /* BypassVnodeVFS */ = {
@@ -359,6 +483,9 @@
 				EAAA7275227F9EBB0071E7AD /* patchfinder.c */,
 				EAAB8B7822AD39C00038568C /* offsets.h */,
 				EAAB8B7722AD39C00038568C /* offsets.c */,
+				EAD673F822BA879300162292 /* lorgnette-structs.h */,
+				EAD673F622BA876100162292 /* lorgnette.h */,
+				EAD673F522BA876100162292 /* lorgnette.c */,
 			);
 			name = Symbols;
 			sourceTree = "<group>";
@@ -381,6 +508,7 @@
 		EAC35B3F22A02CC100C5ACBE /* Gadgets */ = {
 			isa = PBXGroup;
 			children = (
+				EAAA85DD22C2C78A00748E88 /* macops.h */,
 				EAAD838F22A7529000EB6DCB /* xnu-header.h */,
 				EA48380E229B5E4300C30D4E /* physutils.h */,
 				EA48380D229B5E4300C30D4E /* physutils.c */,
@@ -483,26 +611,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAAB8B7922AD39C00038568C /* offsets.c in Sources */,
+				EAD6740122BA977C00162292 /* remoteports.c in Sources */,
 				EAAD839222A7539400EB6DCB /* init.c in Sources */,
+				EAD6740422BA97AD00162292 /* userlandgadgets.c in Sources */,
 				EAAA726D227F99720071E7AD /* kmem.c in Sources */,
 				EAAA726A227F99660071E7AD /* kexec.c in Sources */,
 				EAAB8B7022AC45370038568C /* debugutils.c in Sources */,
 				EAAB8B7322AC4F650038568C /* defeat.c in Sources */,
 				EAC35B3B22A0277400C5ACBE /* pwnvfspolicy.c in Sources */,
+				EAAA85DC22C2C5F100748E88 /* mshell_dev_cmds.m in Sources */,
 				EA483812229B6D0E00C30D4E /* kutils.c in Sources */,
 				EA48380F229B5E4300C30D4E /* physutils.c in Sources */,
+				EAD673FB22BA96C500162292 /* remotecall.c in Sources */,
 				EABF946522B128EC00864E61 /* kdpwrappers.c in Sources */,
+				EAAA85F022C2CAA300748E88 /* mshell.c in Sources */,
+				EAAA85E022C2C7B200748E88 /* mshell_basic_cmds.c in Sources */,
+				EAAA85ED22C2C98900748E88 /* mshell_cmd_bundle.c in Sources */,
+				EAAA85E322C2C81700748E88 /* mshell_adv_cmds.m in Sources */,
+				EAAA85D622C2C1C800748E88 /* mshell_file_cmds.m in Sources */,
+				EAD673F722BA876100162292 /* lorgnette.c in Sources */,
 				EAAB8B7622AC6CDA0038568C /* devicetree.c in Sources */,
 				EA63006E22B98933003A88AE /* debugutils-test.c in Sources */,
 				EAAB8B6A22AC3C0E0038568C /* serial.c in Sources */,
+				EAAA85D222C2C19000748E88 /* mshell-ftp.c in Sources */,
 				EAAA7274227F9B110071E7AD /* minerva.m in Sources */,
 				EAAA7277227F9EBB0071E7AD /* patchfinder.c in Sources */,
 				EAAA7267227F99570071E7AD /* kcall.c in Sources */,
+				EAAA85D922C2C21E00748E88 /* mshell_kern_cmds.c in Sources */,
 				EAAA722F227F98470071E7AD /* ViewController.m in Sources */,
 				EABF945F22B1190900864E61 /* kerneldec.cpp in Sources */,
 				EAAA7235227F98470071E7AD /* minervadebugger.xcdatamodeld in Sources */,
 				EAAA7270227F99820071E7AD /* kutils.c in Sources */,
+				EAAA85F422C2CB0D00748E88 /* simpleserver.c in Sources */,
 				EAB5609B22AB4DFF00C6739B /* sbsuspend.m in Sources */,
+				EAD673FE22BA96CF00162292 /* remotemem.c in Sources */,
 				EAAA723D227F98490071E7AD /* main.m in Sources */,
 				EAAA722C227F98470071E7AD /* AppDelegate.m in Sources */,
 				EABF946222B1195800864E61 /* lzssdec.cpp in Sources */,

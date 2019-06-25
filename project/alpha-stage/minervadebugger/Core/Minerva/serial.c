@@ -86,14 +86,14 @@ bool serial_enable_log(void){
     return (bool)Kernel_Execute(SYMOFF(_PE_I_CAN_HAS_DEBUGGER), 0, 0, 0, 0, 0, 0, 0); // Check if we can really debug
 }
 
-void serial_init_uart(void){
-    printf("Initializing UART...\n");
-    Kernel_Execute(SYMOFF(_UART_INIT), 0, 0, 0, 0, 0, 0, 0); // Initialize serial UART output
-}
-
 void serial_init_shmcon(void){
     printf("Initializing SHM connection...\n");
     Kernel_Execute(SYMOFF(_SHMCON_INIT), 0, 0, 0, 0, 0, 0, 0); // Initialize shm (shared memory) connection
+}
+
+void serial_init_uart(void){
+    printf("Initializing UART...\n");
+    Kernel_Execute(SYMOFF(_UART_INIT), 0, 0, 0, 0, 0, 0, 0); // Initialize serial UART output
 }
 
 void serial_keyboard_init(void){
@@ -107,8 +107,8 @@ void serial_init(void){
     printf("Initializing serial output...\n");
     PE_init_printf();
     serial_enable_log() ? printf("We can now have a debugger.\n") : printf("We failed to enable the debugger.\n"); // Enable logging & debug
-    serial_init_uart(); // Enable UART output
     serial_init_shmcon(); // Enable SHM output
+    serial_init_uart(); // Enable UART output
     serial_print("When this message is shown in UART we have Serial output :)\n");
     serial_keyboard_init();
 }
