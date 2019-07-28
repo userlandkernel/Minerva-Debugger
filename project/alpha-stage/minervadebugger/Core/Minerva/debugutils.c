@@ -21,15 +21,15 @@ boolean_t  ml_get_interrupts_enabled(void) {
 }
 
 int ml_get_cpucount(){
-    return (int)Kernel_Execute(SYMOFF(_ML_GET_CPU_COUNT), 0, 0, 0, 0, 0, 0, 0);
+    return (uint)Kernel_Execute(SYMOFF(_ML_GET_CPU_COUNT), 0, 0, 0, 0, 0, 0, 0);
 }
 
 int ml_get_boot_cpu_number(){
-    return (int)Kernel_Execute(SYMOFF(_ML_GET_BOOT_CPU_NUMBER), 0, 0, 0, 0, 0, 0, 0);
+    return (uint)Kernel_Execute(SYMOFF(_ML_GET_BOOT_CPU_NUMBER), 0, 0, 0, 0, 0, 0, 0);
 }
 
 int ml_get_cpu_number(){
-    return (int)Kernel_Execute(SYMOFF(_ML_GET_CPU_NUMBER), 0, 0, 0, 0, 0, 0, 0);
+    return (uint)Kernel_Execute(SYMOFF(_ML_GET_CPU_NUMBER), 0, 0, 0, 0, 0, 0, 0);
 }
 
 

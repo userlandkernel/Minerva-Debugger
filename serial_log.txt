@@ -1,0 +1,660 @@
+[2136] RootDomainUserClient[0x100000890]::terminatePhase1(00000004)
+[6f] RootDomainUserClient[0x100000890]::scheduleFinalize
+[2136] AppleKeyStoreUserClient[0x10000088f]::terminatePhase1(00000004)
+[6f] RootDomainUserClient[0x100000890]::finalize(00000001[1a36] AppleMobileFileIntegrityUserClient[0x100000898]::terminatePhase1(00000004)
+[6f] AppleMobileFileIntegrityUserClient[0x100000898]::scheduleFinalize
+[6f] AppleMobileFileIntegrityUserClient[0x100000898]::finalize(00000001)
+[6f] AppleMobileFileIntegrityUserClient[0x100000898]::scheduleStop(AppleMobileFileIntegrity[0x1000002c2])
+[6f] AppleMobileFileIntegrityUserClient[0x100000898]::stop(AppleMobileFileIntegrity[0x1000002c2])
+[6f] AppleMobileFileIntegrityUserClient[0x100000898]::detach(AppleMobileFileIntegrity[0x1000002c2])
+[6f] iokit terminate done, 0 stops remain
+[209c] IOAESAcceleratorUserClient[0x100000899]::terminatePhase1(00000004)
+[6f] IOAESAcceleratorUserClient[0x100000899]::scheduleFinalize
+[6f] IOAESAcceleratorUserClient[0x100000899]::finalize(00000001)
+[6f] IOAESAcceleratorUserClient[0x100000899]::scheduleStop(AppleS8000AESAccelerator[0x1000001c9])
+[6f] IOAESAcceleratorUserClient[0x100000899]::stop(AppleS8000AESAccelerator[0x1000001c9])
+[6f] IOAESAcceleratorUserClient[0x100000899]::detach(AppleS8000AESAccelerator[0x1000001c9])
+[6f] iokit terminate done, 0 stops remain
+Binary in trust cache, but has no platform entitlement. Adding it.
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 541 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 541
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 541 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 541
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 542 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 542
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 542 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 542
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 543 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 543
+AMFI: <key><dynamic-codesigning> not found
+callout out to amfid for  /private/var/containers/Bundle/Application/FECF63F8-ADAD-4214-B06F-F848169E295B/minervadebugger.app/minervadebugger, return 0 valid: 1 isApple: 0
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 543 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 543
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 544 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 544
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 544 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 544
+AMFI: <key><dynamic-codesigning> not found
+[2331] IOMobileFramebufferUserClient[0x10000089c]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x10000089c]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x10000089c]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x10000089c]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x10000089c]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x10000089c]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[2314] IOMobileFramebufferUserClient[0x10000089d]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x10000089d]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x10000089d]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x10000089d]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x10000089d]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x10000089d]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+callout out to amfid for  /Library/MobileSubstrate/DynamicLibraries/TetherStatus.dylib, return 0 valid: 1 isApple: 0
+Hardening mac vnode enforce policy...
+x0 = 0xffffffe030db5eb8
+x1 = 0xffffffe00367d4c0
+x2 = 0
+x3 = 0
+x4 = 0xfffffff01af9ffdc
+x5 = 0xffffffe030db5ea0
+x6 = 0xffffffe00569dba8
+x7 = 0
+x8 = 0
+x9 = 0
+x10 = 0x11
+x11 = 0
+x12 = 0x11
+x13 = 0x2
+x14 = 0
+x15 = 0xffffffff0003a918
+x16 = 0xfffffff01af9ffdc
+x17 = 0
+x18 = 0
+x19 = 0xffffffe000228000
+x20 = 0x200000009
+x21 = 0x100000000
+x22 = 0x7
+x23 = 0x5f005f00000000
+x24 = 0x51005f
+x25 = 0x2ffffffff
+x26 = 0
+x27 = 0xe00000000
+x28 = 0
+pc = 0xfffffff01aef37dc
+lr = 0xffffffe003c6e538
+fp = 0xffffffe003c6e538
+sp = 0
+cpsr = 0x3c6e450
+When this message is shown in UART we have Serial output :)
+x0 = 0xfffffff01b410f60
+x1 = 0xfffffff01b410f60
+x2 = 0
+x3 = 0
+x4 = 0
+x5 = 0
+x6 = 0xffffffe005d67a98
+x7 = 0
+x8 = 0
+x9 = 0
+x10 = 0x11
+x11 = 0
+x12 = 0x11
+x13 = 0x2
+x14 = 0x200000000
+x15 = 0xffffffff0003a980
+x16 = 0xfffffff01aefd320
+x17 = 0
+x18 = 0
+x19 = 0
+x20 = 0x200000039
+x21 = 0x100000000
+x22 = 0x7
+x23 = 0x51005100000000
+x24 = 0x51005f
+x25 = 0x2ffffffff
+x26 = 0
+x27 = 0
+x28 = 0
+pc = 0xfffffff01aef37dc
+lr = 0xffffffe00088ef98
+fp = 0xffffffe00088ef98
+sp = 0
+cpsr = 0x88eeb0
+
+Debugger is on
+Welcome to @userlandkernel's Serial Log implementation. Have fun!
+Disabling kernel pointer stripping ...
+Enabling GNVME debugging...
+Enabling panic debugging...
+Boot arguments:  @ 0xfffffff01ae7d990
+Initializing the serial output...
+
+We out here
+==========================================================
+Kernel: Darwin Kernel Version 18.0.0: Tue Aug 14 22:07:19 PDT 2018; root:xnu-4903.202.2~1/RELEASE_ARM64_S8000EBDBA62/
+Boot CPU: 0xe00002c2
+Current CPU: 0xe00002c2
+CPU count: 0xe00002c2
+Hardware interrupts: enabled
+Kernel virtual base: 0xfffffff01ae04000
+Kernel physical base: 0x4e04000
+Panic debugging: 0x1
+SoC Physical base: 0x200000000
+SoC Virtual base: 0x16000000
+gPhysBase: 0
+TCR read access: 0
+TCR write access: 0xfffffff01aea7988
+==========================================================
+
+About to fire the nukes...
+Found entry: 0xfffffff01aea5098
+Found vbar register at: 0xfffffff01aea5000
+Found cpul: 0xfffffff01aea5090
+Found optr: 0
+Found cpu list: 0x13fffffeec3f0000
+Found cpu: 0
+3. 2. 1. 
+boot info:  
+[1f17] IOMobileFramebufferUserClient[0x1000008a0]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a0]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a0]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a0]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a0]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a0]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[13fb] IOMobileFramebufferUserClient[0x1000008a1]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a1]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a1]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a1]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a1]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a1]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[13fb] IOMobileFramebufferUserClient[0x1000008a2]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a2]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a2]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a2]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a2]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a2]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[1f17] IOMobileFramebufferUserClient[0x1000008a3]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a3]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a3]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a3]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a3]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a3]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+x0 = 0
+x1 = 0
+x2 = 0
+x3 = 0
+x4 = 0
+x5 = 0
+x6 = 0xffffffe002a1d6f8
+x7 = 0
+x8 = 0
+x9 = 0
+x10 = 0x11
+x11 = 0
+x12 = 0x11
+x13 = 0x2
+x14 = 0x200000000
+x15 = 0xffffffff0003a980
+x16 = 0xfffffff01aefd320
+x17 = 0
+x18 = 0
+x19 = 0
+x20 = 0x200000039
+x21 = 0x100000000
+x22 = 0x7
+x23 = 0x51005100000000
+x24 = 0x51005f
+x25 = 0x1ffffffff
+x26 = 0
+x27 = 0
+x28 = 0
+pc = 0xfffffff01aef37dc
+lr = 0xffffffe0058dd5a8
+fp = 0xffffffe0058dd5a8
+sp = 0
+cpsr = 0x58dd4c0
+[13fb] IOMobileFramebufferUserClient[0x1000008a4]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a4]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a4]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a4]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a4]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a4]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[13fb] IOMobileFramebufferUserClient[0x1000008a5]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a5]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a5]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a5]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a5]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a5]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[13fb] IOMobileFramebufferUserClient[0x1000008a7]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a7]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a7]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a7]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a7]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a7]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[1f17] IOMobileFramebufferUserClient[0x1000008a6]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a6]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a6]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a6]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a6]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a6]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[13fb] IOMobileFramebufferUserClient[0x1000008a8]::terminatePhase1(00000004)
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+[6f] AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 545 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 545
+IOMobileFramebufferUserClient[0x1000008a8]::scheduleFinalize
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+[6f] AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 545 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 545
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+IOMobileFramebufferUserClient[0x1000008a8]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a8]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a8]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a8]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[23b2] IOMobileFramebufferUserClient[0x1000008a9]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008a9]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008a9]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008a9]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a9]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008a9]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 546 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 546
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 547 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 547
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 546 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 546
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: <key><get-task-allow> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 548 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 548
+AMFI: allowing pid 547 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 547
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 548 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 548
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+[23e7] IOMobileFramebufferUserClient[0x1000008ad]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008ad]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008ad]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008ad]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008ad]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008ad]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 549 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 549
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 550 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 550
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 551 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 551
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 550 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 550
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 549 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 549
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+[235a] AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 552 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 552
+IOSurfaceAcceleratorClient[0x1000008b3]::terminatePhase1(00000004)
+AMFI: <key><dynamic-codesigning> not found
+[235a] [6f] IOSurfaceAcceleratorClient[0x1000008b3]::terminatePhase1(00000004)
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+IOSurfaceAcceleratorClient[0x1000008b3]::scheduleFinalize
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 552 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 552
+[6f] AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+IOSurfaceAcceleratorClient[0x1000008b3]::finalize(00000001)
+[6f] IOSurfaceAcceleratorClient[0x1000008b3]::scheduleStop(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] IOSurfaceAcceleratorClient[0x1000008b3]::stop(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] IOSurfaceAcceleratorClient[0x1000008b3]::detach(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+[235a] AMFI: <key><com.apple.rootless.datavault.controller> not found
+IOSurfaceAcceleratorClient[0x1000008b5]::terminatePhase1(00000004)
+[235a] IOSurfaceAcceleratorClient[0x1000008b5]::terminatePhase1(00000004)
+[6f] AMFI: <key><get-task-allow> not found
+IOSurfaceAcceleratorClient[0x1000008b5]::scheduleFinalize
+AMFI: allowing pid 551 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 551
+AMFI: <key><dynamic-codesigning> not found
+[6f] AMFI: <key><get-task-allow> not found
+iokit terminate done, 0 stops remain
+[235a] IOSurfaceAcceleratorClient[0x1000008b5]::scheduleFinalize
+[6f] IOSurfaceAcceleratorClient[0x1000008b5]::finalize(00000001)
+[6f] IOSurfaceAcceleratorClient[0x1000008b5]::scheduleStop(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] IOSurfaceAcceleratorClient[0x1000008b5]::stop(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] IOSurfaceAcceleratorClient[0x1000008b5]::detach(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 553 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 553
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 553 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 553
+AMFI: <key><dynamic-codesigning> not found
+[13fb] IOMobileFramebufferUserClient[0x1000008ac]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008ac]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008ac]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008ac]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008ac]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008ac]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 554 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 554
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 554 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 554
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 555 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 555
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 555 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 555
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 556 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 556
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 557 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 557
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 556 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 556
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 558 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 558
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: allowing pid 558 to inherit IPC ports (platform binary)
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 558
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 557 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 557
+AMFI: <key><dynamic-codesigning> not found
+[1ea2] RootDomainUserClient[0x10000087f]::terminatePhase1(00000004)
+[6f] RootDomainUserClient[0x10000087f]::scheduleFinalize
+[6f] RootDomainUserClient[0x10000087f]::finalize(00000001)
+[6f] RootDomainUserClient[0x10000087f]::scheduleStop(IOPMrootDomain[0x10000019c])
+[6f] RootDomainUserClient[0x10000087f]::stop(IOPMrootDomain[0x10000019c])
+[6f] RootDomainUserClient[0x10000087f]::detach(IOPMrootDomain[0x10000019c])
+[6f] iokit terminate done, 0 stops remain
+Binary in trust cache, but has no platform entitlement. Adding it.
+Binary in trust cache, but has no platform entitlement. Adding it.
+[2485] IOMobileFramebufferUserClient[0x1000008b8]::terminatePhase1(00000004)
+[2479] IOMobileFramebufferUserClient[0x1000008b9]::terminatePhase1(00000004)
+[6f] IOMobileFramebufferUserClient[0x1000008b8]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008b8]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008b8]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008b8]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008b8]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[6f] IOMobileFramebufferUserClient[0x1000008b9]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008b9]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008b9]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008b9]::stop(AppleMobileADBE0[0x1000001e0])
+[6f] IOMobileFramebufferUserClient[0x1000008b9]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+[2386] IOSurfaceAcceleratorClient[0x1000008bb]::terminatePhase1(00000004)
+[2386] [6f] IOSurfaceAcceleratorClient[0x1000008bb]::scheduleFinalize
+[6f] IOSurfaceAcceleratorClient[0x1000008bb]::terminatePhase1(00000004)
+iokit terminate done, 0 stops remain
+[2386] IOSurfaceAcceleratorClient[0x1000008bb]::scheduleFinalize
+[6f] IOSurfaceAcceleratorClient[0x1000008bb]::finalize(00000001)
+[6f] IOSurfaceAcceleratorClient[0x1000008bb]::scheduleStop(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] IOSurfaceAcceleratorClient[0x1000008bb]::stop(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] IOSurfaceAcceleratorClient[0x1000008bb]::detach(AppleM2ScalerCSCDriver[0x1000001e2])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 559 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 559
+[23b2] IOMobileFramebufferUserClient[0x1000008bc]::terminatePhase1(00000004)
+AMFI: <key><dynamic-codesigning> not found
+[6f] IOMobileFramebufferUserClient[0x1000008bc]::scheduleFinalize
+[6f] IOMobileFramebufferUserClient[0x1000008bc]::finalize(00000001)
+[6f] IOMobileFramebufferUserClient[0x1000008bc]::scheduleStop(AppleMobileADBE0[0x1000001e0])
+Binary in trust cache, but has no platform entitlement. Adding it.
+[6f] AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 559 to inherit IPC ports (platform binary)
+IOMobileFramebufferUserClient[0x1000008bc]::stop(AppleMobileADBE0[0x1000001e0])
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 559
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+[6f] IOMobileFramebufferUserClient[0x1000008bc]::detach(AppleMobileADBE0[0x1000001e0])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 560 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 560
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 560 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 560
+AMFI: <key><dynamic-codesigning> not found
+^CAMFI: <key><get-task-allow> not found
+[23e7] AGXCommandQueue[0x1000008b1]::terminatePhase1(00000004)
+[6f] AGXCommandQueue[0x1000008b1]::scheduleFinalize
+[6f] AGXCommandQueue[0x1000008b1]::finalize(00000001)
+[6f] AGXCommandQueue[0x1000008b1]::scheduleStop(AGXAcceleratorG5P_C0[0x1000001eb])
+[6f] AGXCommandQueue[0x1000008b1]::stop(AGXAcceleratorG5P_C0[0x1000001eb])
+[6f] AGXCommandQueue[0x1000008b1]::detach(AGXAcceleratorG5P_C0[0x1000001eb])
+[6f] iokit terminate done, 0 stops remain
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: allowing pid 561 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 561
+AMFI: <key><dynamic-codesigning> not found
+Binary in trust cache, but has no platform entitlement. Adding it.
+AMFI: <key><com.apple.rootless.install> not found
+AMFI: <key><com.apple.rootless.install.heritable> not found
+AMFI: <key><com.apple.rootless.restricted-nvram-variables.heritable> not found
+AMFI: <key><com.apple.rootless.datavault.controller> not found
+AMFI: <key><get-task-allow> not found
+AMFI: allowing pid 561 to inherit IPC ports (platform binary)
+AMFI: _proc_check_inherit_ipc_ports returning 0 for pid 561
+AMFI: <key><dynamic-codesigning> not found
+AMFI: <key><get-task-allow> not found
+

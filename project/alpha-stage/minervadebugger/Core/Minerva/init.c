@@ -43,4 +43,5 @@ void __attribute__((constructor)) minerva_init_core(void){
     for(int i = 0; i < 5; i++){
         printf("off %d: %#llx\n", i, ((uint64_t*)MINERVA_OFFS()->symbolOffsets)[i]);
     }
+    
 }

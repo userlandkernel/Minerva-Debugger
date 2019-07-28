@@ -224,4 +224,15 @@ enum {
     
     kIOTraceCompatBootArgs    =        kIOTraceIOService | kIOTracePowerMgmt
 };
+
+// Locking
+#define    simple_lock_addr(lock)    (&(lock))
+struct slock {
+    volatile natural_t lock_data;    /* in general 1 bit is sufficient */
+};
+
+typedef struct slock    simple_lock_data_t;
+#define    decl_simple_lock_data(class,name) \
+class    simple_lock_data_t    name;
+
 #endif /* Header_h */

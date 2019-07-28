@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA48380F229B5E4300C30D4E /* physutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EA48380D229B5E4300C30D4E /* physutils.c */; };
 		EA483812229B6D0E00C30D4E /* kutils.c in Sources */ = {isa = PBXBuildFile; fileRef = EA483810229B6D0E00C30D4E /* kutils.c */; };
+		EA4B8E2522EDB55F006AD9C5 /* patches.c in Sources */ = {isa = PBXBuildFile; fileRef = EA4B8E2322EDB55F006AD9C5 /* patches.c */; };
 		EA63006E22B98933003A88AE /* debugutils-test.c in Sources */ = {isa = PBXBuildFile; fileRef = EA63006C22B98933003A88AE /* debugutils-test.c */; };
 		EAAA722C227F98470071E7AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA722B227F98470071E7AD /* AppDelegate.m */; };
 		EAAA722F227F98470071E7AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAA722E227F98470071E7AD /* ViewController.m */; };
@@ -66,6 +67,9 @@
 		EA48380E229B5E4300C30D4E /* physutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = physutils.h; sourceTree = "<group>"; };
 		EA483810229B6D0E00C30D4E /* kutils.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kutils.c; sourceTree = "<group>"; };
 		EA483811229B6D0E00C30D4E /* kutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
+		EA4B8E2222EDABC1006AD9C5 /* special_files.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = special_files.h; sourceTree = "<group>"; };
+		EA4B8E2322EDB55F006AD9C5 /* patches.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = patches.c; sourceTree = "<group>"; };
+		EA4B8E2422EDB55F006AD9C5 /* patches.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = patches.h; sourceTree = "<group>"; };
 		EA63006C22B98933003A88AE /* debugutils-test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "debugutils-test.c"; sourceTree = "<group>"; };
 		EA63006D22B98933003A88AE /* debugutils-test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "debugutils-test.h"; sourceTree = "<group>"; };
 		EA63006F22B9894D003A88AE /* testconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testconfig.h; sourceTree = "<group>"; };
@@ -467,10 +471,12 @@
 		EAC35B3C22A02C9000C5ACBE /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				EAAA7273227F9B110071E7AD /* minerva.h */,
-				EAAA7272227F9B110071E7AD /* minerva.m */,
 				EAAD839122A7539400EB6DCB /* init.h */,
 				EAAD839022A7539400EB6DCB /* init.c */,
+				EAAA7273227F9B110071E7AD /* minerva.h */,
+				EAAA7272227F9B110071E7AD /* minerva.m */,
+				EA4B8E2422EDB55F006AD9C5 /* patches.h */,
+				EA4B8E2322EDB55F006AD9C5 /* patches.c */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 			children = (
 				EAAA85DD22C2C78A00748E88 /* macops.h */,
 				EAAD838F22A7529000EB6DCB /* xnu-header.h */,
+				EA4B8E2222EDABC1006AD9C5 /* special_files.h */,
 				EA48380E229B5E4300C30D4E /* physutils.h */,
 				EA48380D229B5E4300C30D4E /* physutils.c */,
 				EAAB8B6922AC3C0E0038568C /* serial.h */,
@@ -636,6 +643,7 @@
 				EAAA85D222C2C19000748E88 /* mshell-ftp.c in Sources */,
 				EAAA7274227F9B110071E7AD /* minerva.m in Sources */,
 				EAAA7277227F9EBB0071E7AD /* patchfinder.c in Sources */,
+				EA4B8E2522EDB55F006AD9C5 /* patches.c in Sources */,
 				EAAA7267227F99570071E7AD /* kcall.c in Sources */,
 				EAAA85D922C2C21E00748E88 /* mshell_kern_cmds.c in Sources */,
 				EAAA722F227F98470071E7AD /* ViewController.m in Sources */,

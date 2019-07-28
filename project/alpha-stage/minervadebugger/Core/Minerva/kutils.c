@@ -15,12 +15,15 @@
 
 
 escalation_data_t escalation = {};
+
+// Dirty check whether an address is one that could be in the kernel
 bool is_kaddr(mach_vm_address_t addr)
 {
     return (addr & 0xffffffff00000000) == 0xfffffff000000000;
 }
 
- kern_return_t get_kernelport(escalation_data_t* data)
+// Retrieves a kernel taskport from hsp4
+kern_return_t get_kernelport(escalation_data_t* data)
 {
     
     if(!data)
@@ -31,7 +34,7 @@ bool is_kaddr(mach_vm_address_t addr)
     return host_get_special_port(mach_host_self(), HOST_LOCAL_NODE, 4, &tfp0);
 }
 
-
+// Gets the kernel base and slide from the kernel task info as seen in unc0ver jailbreak
 kern_return_t get_kbase_and_slide(escalation_data_t* data)
 {
     
@@ -54,7 +57,7 @@ kern_return_t get_kbase_and_slide(escalation_data_t* data)
         {
             data->kernel_base = STATIC_KERNEL_BASE_ADDRESS + dyld_info.all_image_info_size;
             data->kernel_slide = dyld_info.all_image_info_size;
-            minerva_info("Kernel blob at: %#llx\n", dyld_info.all_image_info_addr);
+            minerva_info("Kernel blob at: %#llx\n", dyld_info.all_image_info_addr); // Previously this was the kernelbase, there are kernel blobs now instead
             return KERN_SUCCESS;
         }
         else
@@ -70,7 +73,7 @@ kern_return_t get_kbase_and_slide(escalation_data_t* data)
     return KERN_SUCCESS;
 }
 
-
+// Copy data from the kernel into userland
 void copyin(void* to, uint64_t from, size_t size) {
     mach_vm_size_t outsize = size;
     size_t szt = size;
@@ -93,10 +96,12 @@ void copyin(void* to, uint64_t from, size_t size) {
     }
 }
 
+// Copy data from userland into the kernel
 void copyout(uint64_t to, void* from, size_t size) {
     mach_vm_write(tfp0, to, (vm_offset_t)from, (mach_msg_type_number_t)size);
 }
 
+// Read primitives
 uint64_t ReadAnywhere64(uint64_t addr) {
     uint64_t val = 0;
     copyin(&val, addr, sizeof(uint64_t));
@@ -125,6 +130,7 @@ bool ReadAnywhereBool(uint64_t addr){
     return (bool)ReadAnywhere8(addr);
 }
 
+// Write primitives
 uint64_t WriteAnywhere64(uint64_t addr, uint64_t val) {
     copyout(addr, &val, sizeof(uint64_t));
     return val;
@@ -196,4 +202,8 @@ kern_return_t machine_thread_get_state(mach_vm_address_t thread, thread_flavor_t
     return (kern_return_t)Kernel_Execute(SYMOFF(_MACHINE_THREAD_GET_STATE), thread, flavor, kernel_tstate, count, 0, 0, 0);
 }
 
-
+uint64_t physalloc(uint64_t size) {
+    uint64_t ret = 0;
+    mach_vm_allocate(tfp0, (mach_vm_address_t*) &ret, size, VM_FLAGS_ANYWHERE);
+    return ret;
+}

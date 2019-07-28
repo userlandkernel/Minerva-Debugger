@@ -176,6 +176,7 @@ int kdpshell_cmd_threads_pid(int nargs, char* args[])
     thread_act_array_t threads = NULL;
     mach_msg_type_number_t nthreads = 0;
     int ret = task_threads(task, &threads, &nthreads);
+    
     if(ret != KERN_SUCCESS) {
         printf("failed to get threads for task %#x: %s\n", task, mach_error_string(ret));
     }

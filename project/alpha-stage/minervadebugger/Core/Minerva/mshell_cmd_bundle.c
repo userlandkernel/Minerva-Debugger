@@ -112,7 +112,6 @@ struct kdpshell_cmd {
     //Server commands
     {"ftpd", kdpshell_cmd_ftpstart, "ftpd [~port]\n"},
     
-    
     //Thread and task commands
     {"tfp", kdpshell_cmd_tfp, "tfp [pid]\n"},
     {"uxpid", kdpshell_cmd_threads_pid, "uxpid [pid]\n"},

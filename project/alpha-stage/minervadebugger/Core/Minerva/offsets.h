@@ -21,6 +21,9 @@ typedef struct minerva_patch_offsets {
     kaddr_t GNVME_DEBUGFLAGS;
     kaddr_t GPE_SERIAL_BAUD;
     kaddr_t BOOTARGS;
+    kaddr_t CONS_OPS_INDEX;
+    kaddr_t DISABLE_SERIAL_OUTPUT;
+    kaddr_t DISABLE_CONSOLE_OUTPUT;
 } minerva_poffs_t;
 
 
@@ -4048,6 +4051,7 @@ typedef struct XNU_4903_232_21_RELEASE_ARM64_T8010 {
     uint64_t _SEMAPHORE_WAIT_NOBLOCK;
     uint64_t _SERIAL_GETC;
     uint64_t _SERIAL_INIT;
+    uint64_t _SERIAL_KEYBOARD_START;
     uint64_t _SERIAL_PUTC;
     uint64_t _SET_FSBLOCKSIZE;
     uint64_t _SET_VM_PRIVILEGE;
@@ -8850,6 +8854,7 @@ typedef struct minerva_symbol_offsets {
     kaddr_t _SEMAPHORE_WAIT_NOBLOCK;
     kaddr_t _SERIAL_GETC;
     kaddr_t _SERIAL_INIT;
+    kaddr_t _SERIAL_KEYBOARD_START;
     kaddr_t _SERIAL_PUTC;
     kaddr_t _SET_FSBLOCKSIZE;
     kaddr_t _SET_VM_PRIVILEGE;

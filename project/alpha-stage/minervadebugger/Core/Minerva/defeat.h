@@ -10,6 +10,7 @@
 #define SYS_ARM64_h
 
 #include <stdio.h>
+#include <mach/mach.h>
 
 #define TCR_T0SZ_SHIFT                0ULL
 #define TCR_TSZ_BITS                6ULL
@@ -84,5 +85,10 @@
 
 #define BOOTSTRAP_TABLE_SIZE (ARM_PGBYTES * 8)
 #define PGTABLE_ADDR_BITS (64ULL - T0SZ_BOOT)
-void set_tcr(uint64_t bit);
+
+void find_socbase(void);
+void find_sysgadgets(void);
+void set_tlb(mach_vm_address_t addr, int level);
+void set_cpacr(mach_vm_address_t addr);
+void set_tcr(uint64_t bit);;
 #endif /* SYS_ARM64_h */

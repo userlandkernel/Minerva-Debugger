@@ -15,6 +15,7 @@
 #include "xnu-header.h"
 #include "offsets.h"
 #include "lorgnette.h"
+#include "serial.h"
 #include <mach/machvm.h>
 #include <mach-o/loader.h>
 #include <stdlib.h>
@@ -24,6 +25,9 @@
 #include <mach-o/dyld.h>
 #include <mach/vm_map.h>
 #include <pthread.h>
+
+#define GRAPHICS_MODE         1
+#define FB_TEXT_MODE          2
 
 mach_port_t get_task_for_processname(char* processName){
     mach_port_t taskPort = MACH_PORT_NULL;
@@ -41,33 +45,6 @@ mach_port_t get_task_for_processname(char* processName){
     }
 }
 
-/*
-kern_return_t remote_call(mach_port_t task, uint64_t pc, uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3){
-    kern_return_t err = KERN_SUCCESS;
-    thread_act_t thread = MACH_PORT_NULL;
-    err = thread_create(task, &thread);
-    if(err != KERN_SUCCESS && !MACH_PORT_VALID(thread)){
-        return KERN_FAILURE;
-    }
-    arm_thread_state64_t ts = {};
-    ts.__pc = pc;
-    ts.__x[0] = x0;
-    ts.__x[1] = x1;
-    ts.__x[2] = x2;
-    ts.__x[3] = x3;
-    err = thread_set_state(thread, ARM_THREAD_STATE64, (thread_state_t)&ts, ARM_THREAD_STATE64_COUNT);
-    if(err != KERN_SUCCESS){
-        return KERN_FAILURE;
-    }
-    err = thread_resume(thread);
-    sleep(1);
-    mach_msg_type_number_t count = ARM_THREAD_STATE64_COUNT;
-    err =  thread_get_state(thread, ARM_THREAD_STATE64, (thread_state_t)&ts, &count);
-    print_threadstate(ts);
-    return err;
-}
- */
-
 void backboardd_screensetup(void){
     mach_port_t tp = get_task_for_processname("backboardd");
     printf("Backboardd taskport: %#x\n", tp);
@@ -84,7 +61,7 @@ void backboardd_screensetup(void){
     printf("BackBoard loaded images (%d)\n", (int)imageCnt);
     for(int i = 0; i < imageCnt; i++){
         printf("%d: %#llx\n", i, thread_call_remote(ctlThread, _dyld_get_image_header, i));
-    };;;
+    }
     printf("Screen should be off.\n");
 }
 
@@ -96,11 +73,6 @@ void console_init(void){
     printf("Initializing console..\n");
     mach_vm_address_t thread = 0;
     kernel_thread_start_priority(SYMOFF(_CONSOLE_INIT), 0, MAXPRI_KERNEL, &thread);
-}
-
-void enable_console(void){
-    printf("Patching Platform Expert to setup video console correctly.\n");
-    __unused struct PE_Video NewVideo = {};
 }
 
 void vc_enable(bool enable){
@@ -115,3 +87,12 @@ void PE_init_console(mach_vm_address_t PE_Video, uint64_t mode){
     Kernel_Execute(0xFFFFFFF007579514+slide, 0, PE_Video, mode, 0, 0, 0, 0);
 }
 
+void run_videoconsole(void){
+    PE_init_console(0, kPEEnableScreen);
+    PE_init_console(0, kPEGraphicsMode);
+    serial_print("Turning the graphical console on...\n");
+    gc_enable(TRUE);
+    
+    serial_print("Turning the video console on...\n");
+    vc_enable(TRUE); // Finally enable video console
+}

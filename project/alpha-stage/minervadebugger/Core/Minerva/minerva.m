@@ -34,7 +34,10 @@
 #include <IOKit/hid/IOHIDEventSystem.h>
 
 #include <jelbrek/jelbrek.h>
+
+
 #include "patchfinder.h"
+#include "patches.h"
 #include "xnu-header.h"
 #include "pwnvfspolicy.h"
 #include "sbsuspend.h"
@@ -48,18 +51,17 @@
 #include "devicetree.h"
 #include "defeat.h"
 #include "mshell.h"
+#include "special_files.h"
 
-mach_vm_address_t soc_base = 0;
-mach_vm_address_t amcc_base = 0;
-mach_vm_address_t cpacr_gadget = 0;
-mach_vm_address_t ttbr0_el1_gadget = 0;
-mach_vm_address_t ttbr1_el1_gadget = 0;
-
-#define SUPER_PRINTF(fmt, ...){\
-printf(fmt, __VA_ARGS__);\
-serial_printf(fmt, __VA_ARGS__);\
+void cleanup_documents(void)
+{
+    NSError *e = nil;
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSArray* files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&e];
+    for(NSString* file in files){
+        printf("Got: %s\n", file.UTF8String);
+    }
 }
-
 
 void hexdump(uint8_t buffer[], int len)
 {
@@ -84,58 +86,6 @@ void hexdump(uint8_t buffer[], int len)
     SUPER_PRINTF("[%s]\n", s);
 }
 
-void loosen_macpolicies(void){
-    printf("Loosening MAC policies...\n");
-    WriteAnywhere32(SLIDADDR(0xFFFFFFF0075FF710), 0x0); // Patch mac policy vnode_enforce
-    SUPER_PRINTF("So did we disable vnode_enforce? %s\n", ReadAnywhere32(SLIDADDR(0xFFFFFFF0075FF710)) == 0 ? "yes" : "nope :(");
-}
-
-void find_socbase(void){
-    soc_base = ReadAnywhere64(SLIDADDR(0xFFFFFFF007674040));
-    mach_vm_address_t entryP = 0;
-    sleep(1);
-    printf("SoC: %#llx\n", soc_base);
-    DTFindEntry("name", "mcc", &entryP);
-    printf("Entry: %#llx\n", soc_base);
-    mach_vm_address_t reg_prop = 0;
-    mach_vm_size_t prop_size = 0;
-    printf("Reg prop: %#llx\n", soc_base);
-    DTGetProperty(entryP, "reg", &reg_prop, &prop_size);
-    sleep(1);
-}
-
-// Uses my patchfinder extensions for finding system instructions
-void find_sysgadgets(void){
-    printf("Finding ARM64 system instructions...\n");
-    cpacr_gadget = find_cpacr_write();                      //set coprocessor active control register
-    minerva_info("cpacr at: %#llx (%#llx)\n", cpacr_gadget, UNSLIDADDR(cpacr_gadget));
-    
-    ttbr0_el1_gadget = find_ttbr0_el1_write();
-    minerva_info("msr ttbr0_el1, x0 at: %#llx (%#llx)\n", ttbr0_el1_gadget, UNSLIDADDR(ttbr0_el1_gadget));    // set translation table base register 0
-
-    ttbr1_el1_gadget = find_ttbr1_el1_write();
-    minerva_info("msr ttbr1_el1, x0 at: %#llx (%#llx)\n", ttbr1_el1_gadget, UNSLIDADDR(ttbr1_el1_gadget));    // set translation table base register 1
-    
-}
-
-void set_tlb0(mach_vm_address_t addr){  // Set firstlevel pagetable entries
-    printf("About to set Translation Table Base 0 to: %#llx\n", addr);
-    sleep(1);
-    Kernel_Execute(ttbr0_el1_gadget, addr, 0, 0, 0, 0, 0, 0);
-}
-
-void set_tlb1(mach_vm_address_t addr){ // Set second level pagetable entries
-    printf("About to set Translation Table Base 1 to: %#llx\n", addr);
-    sleep(1);
-    Kernel_Execute(ttbr1_el1_gadget, addr, 0, 0, 0, 0, 0, 0);
-}
-
-void set_cpacr(mach_vm_address_t addr){ // Set co-processor active control register (Makes KPP angry)
-    printf("About to violate cpacr with address: %#llx\n", addr);
-    sleep(1);
-    Kernel_Execute(cpacr_gadget, addr, 0, 0, 0, 0, 0, 0);
-}
-
 mach_vm_address_t kstring(const char *string){  // Dirty in-kernel string creation
     mach_vm_address_t kaddr = 0;
     size_t len = strlen(string);
@@ -144,8 +94,11 @@ mach_vm_address_t kstring(const char *string){  // Dirty in-kernel string creati
     return kaddr;
 }
 
-
-// Doubt this works, but is supposed to dump SRAM
+/*
+ * Secure RAM is cleared after the early boot.
+ * It is not possible anymore to dump this from physical memory
+ * Therefore this utility is useless
+*/
 void dump_sram(void){
     printf("Dumping SRAM...\n");
     mach_vm_address_t sramvirt = Kernel_alloc(SRAM_BANK_LEN);       // Allocate virtual memory to copy sram to
@@ -180,25 +133,6 @@ bool canRead(const char *file) {
     NSString *path = @(file);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     return ([fileManager attributesOfItemAtPath:path error:nil]);
-}
-
-uint64_t physalloc(uint64_t size) {
-    uint64_t ret = 0;
-    mach_vm_allocate(tfp0, (mach_vm_address_t*) &ret, size, VM_FLAGS_ANYWHERE);
-    return ret;
-}
-
-typedef struct KTRR_REGION_INFO {
-    kaddr_t start;
-    kaddr_t end;
-    kaddr_t lock;
-} ktrr_region_info_t;
-
-
-void find_ktrr_region_info(ktrr_region_info_t* info){
-    if(info){
-     //       info->start =
-    }
 }
 
 // Our main stage
@@ -247,10 +181,14 @@ kern_return_t minerva_init(void)
         minerva_error("Failed to escalate to the root user: %s.\n", mach_error_string(err));
     }
     
+    // Update our session to root
+    setlogin("root");
+    
     //Mark ourselves as platform binary
     platformize(getpid());
 
-    // Copy kernel header and loadcommands
+    
+    // Verify that we can read from the kernel base
     bool magic = (ReadAnywhere32(kbase) == 0xfeedfacf);
     minerva_info("Kernel mach-o magic: %s!\n", magic ? "valid" : "invalid");
     if(!magic){
@@ -260,25 +198,34 @@ kern_return_t minerva_init(void)
         exit(1);
         return err;
     }
+    
+    // Initialize the kernel patchfinder
     minerva_info("Initializing patchfinder..\n",nil);
-    const char *original_kernel_cache_path = "/System/Library/Caches/com.apple.kernelcaches/kernelcache";
-    const char *decompressed_kernel_cache_path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/kernelcache.dec"].UTF8String;
     
-    
-    if(!canRead(decompressed_kernel_cache_path)){
-        if (!canRead(original_kernel_cache_path)) {
-         return KERN_FAILURE;
+    const char *kerndecomp_path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/kernelcache.dec"].UTF8String;
+    if(!canRead(kerndecomp_path)){
+        
+        if (!canRead(REAL_KERNELCACHE_PATH)) {
+         return KERN_FAILURE;   // Are you sure we patched the sandbox?
         }
-        FILE *original_kernel_cache = fopen(original_kernel_cache_path, "rb");
-        if(!original_kernel_cache){
+        
+        // Open stream to real kernel
+        FILE *kern_comp_real = fopen(REAL_KERNELCACHE_PATH, "rb");
+        if(!kern_comp_real){
             return KERN_FAILURE;
         }
-        FILE *decompressed_kernel_cache = fopen(decompressed_kernel_cache_path, "w+b");
-        if(decompress_kernel(original_kernel_cache, decompressed_kernel_cache, NULL, true) != KERN_SUCCESS){
+        
+        // Open stream for decompressed kernel
+        FILE *kern_decomp = fopen(kerndecomp_path, "wb+");
+        
+        // Decompress the kernel
+        if(decompress_kernel(kern_comp_real, kern_decomp, NULL, true) != KERN_SUCCESS){
             return KERN_FAILURE;
         }
-        fclose(decompressed_kernel_cache);
-        fclose(original_kernel_cache);
+        
+        // Dispose of any resources
+        fclose(kern_decomp);
+        fclose(kern_comp_real);
     }
     
     init_kernel(KernelRead, kbase, NULL); // Initialize patchfinder with the kernelbase
@@ -287,67 +234,56 @@ kern_return_t minerva_init(void)
     UnlockNVRAM(); // Unlock the NVRAM
     
     minerva_info("Loosening mac policies...\n", nil);
-    loosen_macpolicies(); // Patch MAC policies to loosen security
+    toggle_mac_vnode_enforce();
 
-    minerva_info("Finding system instructions...\n", nil);
-    find_sysgadgets(); // Find all system gadgets
-    
-    minerva_info("Patching the virtual filesystem to have /AppleInternal...\n", nil);
-  //  pwnvfs_make_appleinternal(); // PWN the virtual filesystem to have a /AppleInternal directory
-    
-    minerva_warn("(Re)Initializing platform...\n", nil);
-//    PE_initialize_platform(FALSE, 0);  // Reinit platform, 0 = use bootArgs constant from offsets
-    
     minerva_info("Initializing serial output...\n", nil);
-    // KernelWrite_32bits(0xFFFFFFF007095CF0+slide, 0);  // We can't patch data const :(
-
-  
+    
+    // KernelWrite_32bits(0xFFFFFFF007095CF0+slide, 0);  // We can't patch data const (KTRR) :(
+    // KernelWrite_64bits(SYMOFF(_PE_PANIC_DEBUGGING_ENABLED), 0x1);
+    // KernelWrite_64bits(SYMOFF(_PE_ARM_DEBUG_PANIC_HOOK), SYMOFF(_NULLOP));
+    printf("Initializing KM console device...\n");
+    sleep(3);
+    kminit();// must be fixed
+    printf("Succeeded to initialize the KM console device!\n");
+    
+    
     serial_init();
     console_init();
-    PE_init_printf();
     
-    PE_init_console(0, kPEReleaseScreen);
-    PE_init_console(0, kPEDisableScreen);
-    PE_init_console(0, kPEAcquireScreen);
-    PE_init_console(0, kPETextScreen);
-    PE_init_console(0, kPETextMode);
-    
-   // KernelWrite_64bits(SYMOFF(_PE_PANIC_DEBUGGING_ENABLED), 0x1);
-  //  KernelWrite_64bits(SYMOFF(_PE_ARM_DEBUG_PANIC_HOOK), SYMOFF(_NULLOP));
-    
-   
-    //PE_init_console(0, kPETextScreen);
-//    PE_init_console(0, kPEDisableScreen);   // Initialization of the videoconsole screen
-        // We want a video console to be enabled
-    
- //   PE_init_console(0, kPEDisableScreen); // Serial for now
-  //  PE_init_console(0, kPERefreshBootGraphics);
     // Just some example of serial prints, might be UART only idk
-   
     serial_print("\n");
     serial_print("Debugger is on\n");
     serial_print("Welcome to @userlandkernel's Serial Log implementation. Have fun!\n");
     
+    minerva_info("Patching for the best default debug experience...\n", nil);
+    toggle_kptr_stripping();
+    toggle_nvme_debugging();
+    toggle_panicdebugging();
+    toggle_kext_assertions();
+    set_kdebug(KDEBUG_MINERVA_DEFAULT);
+    set_kext_logging(KEXTLOGGING_MINERVA_DEFAULT);
+    set_csdebug(CSDEBUG_MINERVA_DEFAULT);
+    set_iokit_debug(IOKIT_DEBUG_MINERVA_DEFAULT);
+    set_kernel_debugflag(KERNEL_DEBUGFLAG_MINERVA_DEFAULT);
+    minerva_info("Patches should have been applied!\n", nil);
     
     // We can use KPRINT for printing kernel strings, but remember its pretty dirty as it uses strlen()
     mach_vm_address_t bootargs = ReadAnywhere64(PATCHOFF(BOOTARGS));
     if(bootargs){
         serial_print("Boot arguments: ");
         serial_kprint(bootargs);
+        serial_printf(" @ %#llx",bootargs);
         serial_print("\n");
     }
     serial_print("Initializing the serial output...\n");
-   
-    // Finally enable the graphic console
-    serial_print("Turning the graphical console on...\n");
-   // gc_enable(TRUE);
-    
-    // Finally enable video console
-    serial_print("Turning the video console on...\n");
-   // vc_enable(TRUE);
- 
     serial_print("\n");
     serial_kprint(kstring("We out here\n"));
+    
+    minerva_info("Finding system instructions...\n", nil);
+    find_sysgadgets(); // Find all system gadgets
+    
+    //minerva_info("Patching the virtual filesystem to have /AppleInternal...\n", nil);
+   // pwnvfs_make_appleinternal(); // PWN the virtual filesystem to have a /AppleInternal directory
     
     // Print some kernel information to the serial console.
     serial_print("==========================================================\n");
@@ -414,8 +350,12 @@ kern_return_t minerva_init(void)
     sleep(1);
     serial_print("2. ");
     sleep(1);
-    serial_print("1. ");
-    
+    serial_print("1. \n");
+
+    kernel_boot_info_t boot_info = {};
+    err =  host_get_boot_info(FakeHostPriv(), boot_info);
+    serial_printf("boot info: %s\n", boot_info);
+#ifdef test_threads
     mach_vm_address_t threads[10];
      char c = 'A';
     for(int i = 1; i < 10; i++){
@@ -423,19 +363,53 @@ kern_return_t minerva_init(void)
         kernel_thread_start_priority(SYMOFF(_SERIAL_PUTC), c++, MAXPRI_KERNEL, &threads[i-1]);
     }
     serial_print("Thread test succeeded!\n");
-    
+#endif
     set_tcr(KERN_SUCCESS);
    // backboardd_screensetup();
    // find_socbase(); // Panics, DT function wrappers are broken lol
     printf("Preparing shell...\n");
     sleep(3);
-    err = run_mshell(1337, NULL);
+   
+    [NSThread detachNewThreadWithBlock:^{
+        kern_return_t err = run_mshell(1337, NULL);
+        SUPER_PRINTF("Running MSHELL on port 1337 %s", err == KERN_SUCCESS ? "succeeded!\n" : "failed.\n");
+    }];
     
-    SUPER_PRINTF("Running MSHELL on port 1337 %s", err == KERN_SUCCESS ? "succeeded!\n" : "failed.\n");
+    /*uint64_t iomalloc_ptr = find_IOMalloc();
+    for(int i = 0; i < 0x200; i++){
+        uint64_t addr = Kernel_Execute(iomalloc_ptr, 87, 0, 0, 0, 0, 0, 0);
+        printf("%d] %#llx which is in zone: NaN\n", i, addr);
+        WriteAnywhere64(addr, 0x4141414141414141);
+    }*/
+    struct queue_entry {
+        struct queue_entry    *next;        /* next element */
+        struct queue_entry    *prev;        /* previous element */
+    } __attribute__ ((aligned (8)));
     
+    struct IOInterruptAccountingData {
+        void *owner;
+        struct queue_entry q;
+        int interruptIndex;
+        volatile uint64_t interruptStatistics[10] __attribute__((aligned(8)));
+    };
+    
+    printf("We wil have to spray: %lu\n", sizeof(struct IOInterruptAccountingData));
+    arm_thread_state64_t s = {};
+    
+    mach_vm_address_t thread = 0;
+    kernel_thread_start_priority(SYMOFF(_SERIAL_GETC), 0, MAXPRI_KERNEL, &thread);
+    thread = (ReadAnywhere64(thread));
+    printf("Thread = %#llx\n", thread);
+/*    sleep(1);
+    for(int i = 0; i < 0xa; i++){
+        s.__pc = SYMOFF(_SERIAL_PUTC);
+        s.__x[0] = 0x41+i;
+        printf("%s\n", mach_error_string(machine_thread_set_state(thread, ARM_THREAD_STATE64, s, ARM_THREAD_STATE64_COUNT)));
+       
+    }*/
+
    // term_kernel();
     //term_jelbrek();
-    
    // exit(0);
     return err;
     

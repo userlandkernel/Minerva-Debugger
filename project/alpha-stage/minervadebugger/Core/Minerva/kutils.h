@@ -44,6 +44,7 @@ kern_return_t get_kbase_and_slide(escalation_data_t *escalation); // Credits: pw
 
 void copyin(void* to, uint64_t from, size_t size); // Credits: Luca Todesco
 void copyout(uint64_t to, void* from, size_t size); // Credits: Luca Todesco
+uint64_t physalloc(uint64_t size);
 void phys_copyin(void* to, uint32_t from, size_t size);
 void phys_copyout(uint32_t to, void* from, size_t size);
 

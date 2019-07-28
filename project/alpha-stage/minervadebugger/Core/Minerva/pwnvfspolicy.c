@@ -194,9 +194,10 @@ kern_return_t pwnvfs_make_appleinternal(void){
         
         // Try to look it up :)
         uint64_t realInternalVnode = 0;
-        vnode_lookup("AppleInternal", 0, &realInternalVnode, get_vfs_context());
+        vnode_lookup("/AppleInternal ", 0, &realInternalVnode, get_vfs_context());
         
         printf("Real vnode is now: %#llx\n", realInternalVnode);
+        vnode_put(realInternalVnode);
         return KERN_SUCCESS;
         
     }
