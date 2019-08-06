@@ -16,6 +16,7 @@ which returns the task information for the given pid including the taskport.
 - Any jailbreak with HSP4 exported same way as unc0ver.  
 - Pre-A12 devices, A12 support coming soon.  
 - At this time only iPhone 6S on 12.0.1 has offsets.  
+- Its malware? No it is not. This was written intended to help developers and researchers. Malware is written purposely to do harm. Sure when abused by a user any code can do harm, can't it?  
 
 
 ## Architecture
@@ -95,3 +96,4 @@ which returns the task information for the given pid including the taskport.
 - Jake James, for JelbrekLib
 - Apple Inc, for XNU. Credit where credit is due right ;)
 - Luca Todesco, some of the primitives in the project can be found in his jailbreaks :)
+
