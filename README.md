@@ -1,6 +1,6 @@
 # Minerva Debugger (WIP)
-
-In short: Providing a great interface to kernel, hardware, threads and processes in a productive research environment. 
+***TLDR***:  
+*Providing a great interface to kernel, hardware, threads and processes in a productive research environment.*  
 
 The Minerva Debugger is a debugger built on top of the features of the iOS Operating System.  
 It allows one to interact with components of the Operating System like subsystems such as Mach, IOKit and BSD or interfaces like Network, Bluetooth, Serial or execution such as processes, tasks, threads and exception handlers.  
