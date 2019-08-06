@@ -71,8 +71,8 @@ Support for connect-back is as of current not considered yet due to performance 
 
 
 ## OpenSource, License exceptions and Contributions
-- As minerva is OpenSource under the MIT License it is possible to reuse the code in any project if given appropriate credit.  
-- As an exception and addition to the MIT License the source code of this project and or code using this project must be published on GitHub specifically, and must also be published OpenSource and applications using more than 50% of the code of this project must give credit visible to the user.  
+- As minerva is OpenSource under the GNU Affero General Public License v3.0 it is possible to reuse the code in any project if given appropriate credit.  
+- As an exception and addition to the GNU Affero General Public License v3.0 the source code of this project and or code using this project must be published on GitHub specifically, and must also be published OpenSource and applications using more than 50% of the code of this project must give credit visible to the user.  
 - Contributions to Minerva are much appreciated.  
 - Luca Todesco will get a gram of dutch Amnesia Haze donated by me (@userlandkernel) if he manages to implement the KPP bypass in Minerva for devices running iOS before and including 12.1 to be picked up in Amsterdam as guidelined by Dutch law.  
 - See [Documentation](documentation) if you want to contribute to development or documentation.  
