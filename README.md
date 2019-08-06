@@ -2,12 +2,14 @@
 ***TLDR***:  
 *Providing a great interface to kernel, hardware, threads and processes in a productive research environment.*  
 
-The Minerva Debugger is a debugger built on top of the features of the iOS Operating System.  
-It allows one to interact with components of the Operating System like subsystems such as Mach, IOKit and BSD or interfaces like Network, Bluetooth, Serial or execution such as processes, tasks, threads and exception handlers.  
-The debugger consists of a multiple of useful components like a network or local shell, serial I/O and a server that exposes the debugger as an API to the network.  
-The API is implemented like the structures one would expect.  
-Each component can be reached through a matching route, so one could get for example the task of a process by its pid (task_for_pid()) in a way such that https://minerva.local:666/process/{pid}/task
-will return the task information for the given pid.  
+- Built on top of features of iOS Operating System.  
+- Allows interacting with components of the OS like (Mach, IOKit, BSD).  
+- Allows interacting with interfaces such as Network, Bluetooth, Serial.  
+- Allows interacting with execution of processes, tasks, threads, exception handlers and likewise.  
+- Consists of multiple components under more: a local and tcp bound shell, serial I/O and an api server.  
+- API has routes for many logical operations in an easy structure as seen in the example:  
+Get the task of a process by its pid (task_for_pid()) via https://minerva.local:666/process/{pid}/task
+which returns the task information for the given pid including the taskport.  
 
 
 ## Support
@@ -17,22 +19,19 @@ will return the task information for the given pid.
 
 
 ## Architecture
-Minerva Debugger is designed to be a LaunchDaemon that is loaded after exporting the kernel's taskport via hsp4, by for example jailbreaking with Unc0ver.  
-The debugger will run in the background and will entitle itself to access a process when needed (task_for_pid).  
-This daemon will try to read out a password hash stored in the NVRAM on the device.  
-If that hash does not exist it will generate the NVRAM entry and set the default password 'alpine'.  
-As Minerva Debugger is exposed to clients via a mach service and via the web it will require a client to sent the password either through a mach message or via HTTP POST depending on what service of the debugger the client is connected to (web / local).  
-Minerva Debugger will then compare the hashed value of the password with the value stored in the nvram 
-and if matched generate a session token and send it to the client.  
-All requests other than the initial (handshake) request will require the session token to be provided.  
-Session tokens will expire in an hour, the client will be notified about this shortly before the expiration so that it can immediately request a new session.  
-Clients can change the password of the Minerva debugger but will always need to provide the old password as a valid session token is required for this.  
-Minerva will also update the user about this behaviour by displaying an alert in SpringBoard that the password has been changed.  
-The only way to reset a the Minerva password is to generate a new password for Minerva and update it in the NVRAM.  
-Minerva Debugger will work in userland too but in that case needs to be installed as a regular app instead of a LaunchDaemon, it will still register a mach service locally to be accessed by processes running with the same app group.  
-However, to make the network part of Minerva Debugger work in userland one will have to codesign Minerva Debugger with the Network Extensions entitlement which requires the signer to be an Apple Developer ($100 plan).  
-Support for connect-back is as of current not considered yet due to performance and security related design requirements.  
-
+- Designed as a LaunchDaemon
+- Built on top of export kernel taskport via HSP4.  
+- Is loaded after a jailbreak, e.g: Unc0ver.  
+- Will run in the background and entitle itself when needed (e.g: get_task-allow)
+- Will enforce authorization by password, stored salted and hashed in the NVRAM defaulting to 'alpine'.  
+- Resetting a password requires user to delete NVRAM entry manually.  
+- Changing password via Minerva can only be done provided a valid session token + old password.  
+- Minerva will always notify the user via alerts on SpringBoard whenever it's password is changed.  
+- Will enforce authentication through session tokens that are enforced on any exposed operation for any service (HTTP / local mach).  
+- Minerva will work in userland when installed as a regular app instead of a launchdaemon.  
+- Minerva requires the Nework Extension for the bound shell, which requires it to be codesigned using an Apple Developer ($100) account.  
+- Minerva can work without the bound shell as well, but is pretty limited.  
+- Minerva currently has no support planned for a connect-back like shell due to performance and security considerations that require design changes.
 
 ## Core Features
 - Minerva is meant to expose the iOS Operating system into easy accessible higher level environments, like an API and commandline environment.  
